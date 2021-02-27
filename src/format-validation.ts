@@ -1,87 +1,85 @@
 /**
- * @description 验证邮箱格式。
- * @example
- * isEmail('453491931@qq.com')  // => true
+ * 验证邮箱格式
  */
 export const isEmail = (str: string) => /^[\w-]+@[\w-]+(?:\.[\w-]{2,3}){1,2}$/.test(str);
 
 /**
- * @description 验证手机号，根据工信部 2019 年最新公布的手机号段
+ * 验证手机号，根据工信部 2019 年最新公布的手机号段
  */
-export const isMobile = (str: string) => /^(?:(?:\+|00)86)?1(?:(?:3[\d])|(?:4[5-7|9])|(?:5[0-3|5-9])|(?:6[5-7])|(?:7[0-8])|(?:8[\d])|(?:9[189]))\d{8}$/.test(str);
+export const isMobile = (str: string) => /^(?:(?:\+|00)86)?1(?:3[\d]|4[5-7|9]|5[0-3|5-9]|6[5-7]|7[0-8]|8[\d]|9[189])\d{8}$/.test(str);
 
 /**
- * @description 验证电话号码，规则为可选的区号（3 或 4 位）加横杠，后跟 7 或 8 位数字
+ * 验证电话号码，规则为可选的区号（3 或 4 位）加横杠，后跟 7 或 8 位数字
  */
 export const isPhone = (str: string) =>/^(?:\d{3}-)?\d{8}$|^(?:\d{4}-)?\d{7}$/.test(str);
 
 /**
- * @description 验证 URL 地址
+ * 验证 URL 地址
  */
-export const isURL = (str: string) => /^(?:https?:\/\/)?[\w-]+(\.[\w-]+)+(?:[\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?$/.test(str);
+export const isURL = (str: string) => /^(?:https?:\/\/)?[\w-]+(?:\.[\w-]+)+(?:[\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?$/.test(str);
 
 /**
- * @description 验证迅雷地址
+ * 验证迅雷地址
  */
 export const isThunderURI = (str: string) => /^thunderx?:\/\/[a-zA-Z\d]+=$/.test(str);
 
 /**
- * @description 验证 ed2k 地址
+ * 验证 ed2k 地址
  */
 export const isEd2kURI = (str: string) => /^ed2k:\/\/\|file\|.+\|\/$/.test(str);
 
 /**
- * @description 验证磁力链接
+ * 验证磁力链接
  */
 export const isMagnetURI = (str: string) => /^magnet:\?xt=urn:btih:[0-9a-fA-F]{40,}.*$/.test(str);
 
 /**
- * @description 验证 A 股代码
+ * 验证 A 股代码
  */
 export const isAShareCode = (str: string) => /^(?:s[hz]|S[HZ])\d{6}$/.test(str);
 
 /**
- * @description 验证 md5
+ * 验证 md5
  */
-export const isMD5 = (str: string) => /^(?:[a-f\d]{32})|(?:[A-F\d]{32})$/.test(str);
+export const isMD5 = (str: string) => /^[a-f\d]{32}|[A-F\d]{32}$/.test(str);
 
 /**
- * @description 验证语义化版本号
+ * 验证语义化版本号
  */
 export const isVersionCode = (str: string) => /^\d+(?:\.\d+){2}(?:-(?:alpha|beta|rc)\.\d+)?$/.test(str);
 
 /**
- * @description 验证视频地址
+ * 验证视频地址
  */
 export const isVideoURL = (str: string) => /^https?:\/\/(?:.+\/)+.+\.(?:swf|avi|flv|mpg|rm|mov|wav|asf|3gp|mkv|rmvb|mp4)$/i.test(str);
 
 /**
- * @description 验证图片地址
+ * 验证图片地址
  */
 export const isImageURL = (str: string) => /^https?:\/\/(?:.+\/)+.+\.(?:gif|png|jpg|jpeg|webp|svg|psd|bmp|tif)$/i.test(str);
 
 /**
- * @description 验证 Linux 文件地址
+ * 验证 Linux 文件地址
  */
 export const isLinuxFileAddress = (str: string) => /^\/(?:[^\/\s]+\/)*[^\/\s]+$/.test(str);
 
 /**
- * @description 验证 Linux 隐藏文件地址
+ * 验证 Linux 隐藏文件地址
  */
 export const isLinuxHiddenFileAddress = (str: string) => /^\/(?:[^\/\s]+\/)*\.[^\/\s]+/.test(str);
 
 /**
- * @description 验证 Windows 文件地址
+ * 验证 Windows 文件地址
  */
 export const isWindowsFileAddress = (str: string) => /^[a-zA-Z]:\\(?:[^\\\s]+\\)*[^\\\s]*$/.test(str);
 
 /**
- * @description 验证 Linux 文件夹地址
+ * 验证 Linux 文件夹地址
  */
 export const isLinuxFolderAddress = (str: string) => /^\/(?:[^\/\s]+\/)*$/.test(str);
 
 /**
- * @description 验证 Windows 文件夹地址
+ * 验证 Windows 文件夹地址
  */
 export const isWindowsFolderAddress = (str: string) => /^[a-zA-Z]:\\(?:[^\\\s]+\\)*$/.test(str);
 
@@ -106,7 +104,7 @@ export const is24Time = (str: string) => /^(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d$/.t
  */
 export const isBase64 = (str: string) => /^\s*data:(?:[a-z]+\/[a-z0-9-+.]+(?:;[a-z-]+=[a-z0-9-]+)?)?(?:;base64)?,([a-z0-9!$&',()*+;=\-._~:@\/?%\s]*?)\s*$/i.test(str);
 
-export const isChineseName = (str: string) => /^(?:[\u4e00-\u9fa5·]{2,16})$/.test(str);
+export const isChineseName = (str: string) => /^[\u4e00-\u9fa5·]{2,16}$/.test(str);
 export const isEnglishName = (str: string) => /(^[a-zA-Z]+[a-zA-Z\s]{0,20}[a-zA-Z]+$)/.test(str);
 
 
@@ -118,7 +116,7 @@ export const isBankCardCode = (str: string) => /^[1-9]\d{9,29}$/.test(str);
 /**
  * @description 验证新能源车车牌号
  */
-export const isNewEnergyCarNumber = (str: string) => /[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领 A-Z][A-HJ-NP-Z](?:(?:[0-9]{5}[DF])|(?:[DF][A-HJ-NP-Z0-9][0-9]{4}))$/.test(str);
+export const isNewEnergyCarNumber = (str: string) => /[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领 A-Z][A-HJ-NP-Z](?:[0-9]{5}[DF]|[DF][A-HJ-NP-Z0-9][0-9]{4})$/.test(str);
 
 /**
  * @description 验证非新能源车车牌号
@@ -133,14 +131,14 @@ export const isCarNumber = (str: string) => isNewEnergyCarNumber(str) || isNonNe
 /**
  * @description 验证护照号码
  */
-export const isPassportNumber = (str: string) => /(?:^[EeKkGgDdSsPpHh]\d{8}$)|(^(?:(?:[Ee][a-fA-F])|(?:[DdSsPp][Ee])|(?:[Kk][Jj])|(?:[Mm][Aa])|(?:1[45]))\d{7}$)/.test(str);
+export const isPassportNumber = (str: string) => /^[EeKkGgDdSsPpHh]\d{8}$|(^(?:[Ee][a-fA-F]|[DdSsPp][Ee]|[Kk][Jj]|[Mm][Aa]|1[45])\d{7}$)/.test(str);
 
 /**
  * @description 验证 IP 地址
  */
 export const isIPv4 = (str: string) => /^(?:(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)\.){3}(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)$/.test(str);
 
-export const isIPv6 = (str: string) => /^(?:(?:[0-9A-Fa-f]{1,4}:){7}[0-9A-Fa-f]{1,4})|(?:(?:[0-9A-Fa-f]{1,4}:){6}:[0-9A-Fa-f]{1,4})|(?:(?:[0-9A-Fa-f]{1,4}:){5}:(?:[0-9A-Fa-f]{1,4}:)?[0-9A-Fa-f]{1,4})|(?:(?:[0-9A-Fa-f]{1,4}:){4}:(?:[0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})|(?:(?:[0-9A-Fa-f]{1,4}:){3}:(?:[0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})|(?:(?:[0-9A-Fa-f]{1,4}:){2}:(?:[0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})|(?:(?:[0-9A-Fa-f]{1,4}:){6}(?:(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)\.){3}(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)|(?:(?:[0-9A-Fa-f]{1,4}:){0,5}:(?:(?:25[0-5]|1\d{2}|2[0-4]\d|[1-9]\d|\d)\.){3}(?:25[0-5]|1\d{2}|2[0-4]\d|[1-9]\d|\d))|(?:::(?:[0-9A-Fa-f]{1,4}:){0,5}(?:(?:25[0-5]|1\d{2}|2[0-4]\d|[1-9]\d|\d)\.){3}(?:25[0-5]|1\d{2}|2[0-4]\d|[1-9]\d|\d))|(?:[0-9A-Fa-f]{1,4}::(?:[0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})|(?:::(?:[0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})|(?:(?:[0-9A-Fa-f]{1,4}:){1,7}:))$/.test(str);
+export const isIPv6 = (str: string) => /^(?:[0-9A-Fa-f]{1,4}:){7}[0-9A-Fa-f]{1,4}|(?:[0-9A-Fa-f]{1,4}:){6}:[0-9A-Fa-f]{1,4}|(?:[0-9A-Fa-f]{1,4}:){5}:(?:[0-9A-Fa-f]{1,4}:)?[0-9A-Fa-f]{1,4}|(?:[0-9A-Fa-f]{1,4}:){4}:(?:[0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4}|(?:[0-9A-Fa-f]{1,4}:){3}:(?:[0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4}|(?:[0-9A-Fa-f]{1,4}:){2}:(?:[0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4}|(?:(?:[0-9A-Fa-f]{1,4}:){6}(?:(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)\.){3}(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)|(?:[0-9A-Fa-f]{1,4}:){0,5}:(?:(?:25[0-5]|1\d{2}|2[0-4]\d|[1-9]\d|\d)\.){3}(?:25[0-5]|1\d{2}|2[0-4]\d|[1-9]\d|\d)|::(?:[0-9A-Fa-f]{1,4}:){0,5}(?:(?:25[0-5]|1\d{2}|2[0-4]\d|[1-9]\d|\d)\.){3}(?:25[0-5]|1\d{2}|2[0-4]\d|[1-9]\d|\d)|[0-9A-Fa-f]{1,4}::(?:[0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4}|::(?:[0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4}|(?:[0-9A-Fa-f]{1,4}:){1,7}:)$/.test(str);
 
 /**
  * @description 验证英文
@@ -153,12 +151,12 @@ export const isEnglish = (str: string) => /^[a-zA-Z]+$/.test(str);
 export const isChinese = (str: string) => /^[\u4E00-\u9FA5]+$/.test(str);
 
 /**
- * @description 验证大写字母
+ * @description 验证小写字母
  */
 export const isEnglishLower = (str: string) => /^[a-z]+$/.test(str);
 
 /**
- * @description 验证小写字母
+ * @description 验证大写字母
  */
 export const isEnglishUpper = (str: string) => /^[A-Z]+$/.test(str);
 
@@ -206,13 +204,13 @@ export const isStrongPassword = (str: string) => /^\S*(?=\S{6,})(?=\S*\d)(?=\S*[
 
 export const isJavaPackageName = (str: string) => /^(?:[a-zA-Z_][a-zA-Z0-9_]*)+(?:\.[a-zA-Z_][a-zA-Z0-9_]*)+$/.test(str);
 
-export const isMacAddress = (str: string) => /^(?:(?:(?:(?:[0-9a-f]{2}:){5})|(?:(?:[0-9a-f]{2}-){5}))[0-9a-f]{2})|(?:(?:(?:(?:[0-9A-F]{2}:){5})|(?:(?:[0-9A-F]{2}-){5}))[0-9A-F]{2})$/i.test(str);
+export const isMacAddress = (str: string) => /^(?:(?:[0-9a-f]{2}:){5}|(?:[0-9a-f]{2}-){5})[0-9a-f]{2}|(?:(?:[0-9A-F]{2}:){5}|(?:[0-9A-F]{2}-){5})[0-9A-F]{2}$/i.test(str);
 
 /**
  * @description 验证身份证
  */
 export const isIdentity = (str: string) => {
-    if (!/(?:^\d{15}$)|(?:^\d{17}[\dxX])/.test(str)) {
+    if (!/^\d{15}$|^\d{17}[\dxX]/.test(str)) {
         return false;
     }
 
@@ -226,7 +224,7 @@ export const isIdentity = (str: string) => {
     // 71 -> 台湾
     // 81 -> 香港     82 -> 澳门
     // 91 -> 国外
-    if (!/(?:1[1-5])|(?:2[1-3])|(?:3[1-7])|(?:4[1-6])|(?:5[0-4])|(?:6[1-5])|71|81|82|91/.test(str.slice(0, 2))) {
+    if (!/1[1-5]|2[1-3]|3[1-7]|4[1-6]|5[0-4]|6[1-5]|71|81|82|91/.test(str.slice(0, 2))) {
         return false;
     }
 

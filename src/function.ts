@@ -1,7 +1,5 @@
 /**
- * @description 可选参数执行
- * @param fn
- * @param args
+ * 可选参数执行
  */
 export const partial = (fn: Function, ...args: any[]) => {
     return args.length < 1
@@ -10,15 +8,9 @@ export const partial = (fn: Function, ...args: any[]) => {
 }
 
 /**
- * @description 柯里化
- * @param fn
+ * 柯里化
  */
 export const curry = (fn: Function) => {
-    /**
-     * @description
-     * @param {number} innerFunctionArgsLength
-     * @param {any[]} currentArgs
-     */
     return (function inner<T>(innerFunctionArgsLength: number, currentArgs: T[]) {
 
         // 检查第一个参数
@@ -33,6 +25,6 @@ export const curry = (fn: Function) => {
 };
 
 export const argumentNames = (fn: Function) => {
-    const names = fn.toString().match(/^[\s\(]*function[^(]*\(([^\)]*)\)/)[1].replace(/\s+/g, '').split(',');
-    return names.length == 1 && !names[0] ? [] : names;
+    const names = fn.toString().match(/^[\s(]*function[^(]*\(([^)]*)\)/)?.[1].replace(/\s+/g, '').split(',');
+    return names?.length == 1 && !names[0] ? [] : names;
 };

@@ -23,10 +23,9 @@ export const max = (arr: number[]) => Math.max(...arr);
 export const min = (arr: number[]) => Math.min(...arr);
 
 /**
- * @description 极差
- * @param arr
+ * 极差，为了与范围（range）区别，函数名设置为 distance
  */
-export const range = (arr: number[]) => max(arr) - min(arr);
+export const distance = (arr: number[]) => max(arr) - min(arr);
 
 /**
  * @description 方差
