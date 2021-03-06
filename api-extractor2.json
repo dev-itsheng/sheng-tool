@@ -1,7 +1,0 @@
-{
-    "mainEntryPointFilePath": "./typings/index.d.ts",
-    "dtsRollup": {
-        "enabled": true,
-        "untrimmedFilePath": "./index.d.ts"
-    }
-}

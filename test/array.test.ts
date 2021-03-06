@@ -1,7 +1,7 @@
 import {
     countOccurrences,
     everyNth
-} from '../src/index';
+} from '../src';
 
 test('countOccurrences', () => {
     expect(countOccurrences([1, 2, 3, 1], 1)).toBe(2);

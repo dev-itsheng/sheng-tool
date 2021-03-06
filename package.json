@@ -5,7 +5,12 @@
     "main": "index.js",
     "scripts": {
         "test": "jest",
-        "build": "rimraf ./dist && rollup -c && tsc -d && api-extractor run && rimraf ./temp-typings && rimraf ./temp"
+        "clean-before": "rimraf ./dist",
+        "build-bundle": "rollup -c",
+        "build-typescript-declaration": "tsc -d && api-extractor run",
+        "build-document": "typedoc --json a.json src/index.ts",
+        "clean-after": "rimraf ./temp-typings && rimraf ./temp-docs",
+        "build": "npm run clean-before && npm run build-bundle && npm run build-typescript-declaration && npm run build-document && npm run clean-after"
     },
     "author": "",
     "license": "ISC",
@@ -14,18 +19,22 @@
         "@babel/preset-env": "^7.10.2",
         "@babel/preset-typescript": "^7.10.1",
         "@microsoft/api-extractor": "^7.13.1",
+        "@microsoft/tsdoc": "^0.13.0",
         "@rollup/plugin-babel": "^5.3.0",
         "@rollup/plugin-node-resolve": "^11.2.0",
         "@types/jest": "^25.2.3",
         "@types/jsdom": "^16.2.3",
         "@types/lodash-es": "^4.17.4",
         "babel-jest": "^26.0.1",
+        "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
         "jest": "^26.0.1",
         "jsdom": "^16.2.2",
         "lodash-es": "^4.17.21",
         "rimraf": "^3.0.2",
         "rollup": "^2.39.1",
+        "rollup-plugin-terser": "^7.0.2",
         "rollup-plugin-typescript2": "^0.30.0",
+        "typedoc": "^0.20.28",
         "typescript": "^4.2.2"
     }
 }

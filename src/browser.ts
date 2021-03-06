@@ -13,6 +13,10 @@ export const getQueryString = (name: string) => {
 /**
  * 动态引入 JS
  * @param {string} src JS 文件地址
+ * @example
+ * ```typescript
+ * injectScript('https://cdn.bootcdn.net/ajax/libs/vue/3.0.2/vue.global.js')
+ * ```
  */
 export const injectScript = (src: string) => {
     const script = document.createElement('script');

@@ -1,9 +1,3 @@
-// console.log('read config');
-//
-// module.exports = {
-//     transform: {
-//         '^.+\\.tsx?$': 'babel-jest',
-//     },
-//     //testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
-//     //moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-// }
+module.exports = {
+    transformIgnorePatterns: ['<rootDir>/node_modules/(?!(lodash-es|other-es-lib))']
+}
