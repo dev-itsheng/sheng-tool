@@ -2,14 +2,16 @@
     "name": "sheng-tool",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "dist/index.cjs.js",
+    "module": "dist/index.esm.js",
+    "typings": "dist/index.d.ts",
     "scripts": {
         "test": "jest",
         "clean-before": "rimraf ./dist",
         "build-bundle": "rollup -c",
         "build-typescript-declaration": "tsc -d && api-extractor run",
-        "build-document": "typedoc --json a.json src/index.ts",
-        "clean-after": "rimraf ./temp-typings && rimraf ./temp-docs",
+        "build-document": "typedoc src/index.ts",
+        "clean-after": "rimraf ./temp-typings && rimraf ./docs",
         "build": "npm run clean-before && npm run build-bundle && npm run build-typescript-declaration && npm run build-document && npm run clean-after"
     },
     "author": "",
@@ -36,5 +38,6 @@
         "rollup-plugin-typescript2": "^0.30.0",
         "typedoc": "^0.20.28",
         "typescript": "^4.2.2"
-    }
+    },
+    "dependencies": {}
 }

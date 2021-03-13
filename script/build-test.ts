@@ -13,8 +13,7 @@ const project = app.convert();
 
 let text = '';
 
-// @ts-ignore
-for (const item of project.children) {
+for (const item of project!.children!) {
     const signatures = item.signatures![0];
     const name = signatures.name;
     const example = signatures.comment!.tags.find(x => x.tagName === 'example')!.text;
