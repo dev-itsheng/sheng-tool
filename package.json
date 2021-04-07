@@ -6,6 +6,7 @@
     "module": "dist/index.esm.js",
     "typings": "dist/index.d.ts",
     "scripts": {
+        "build-test": "ts-node ./script/build-test.ts",
         "test": "jest",
         "clean-before": "rimraf ./dist",
         "build-bundle": "rollup -c",
@@ -36,6 +37,7 @@
         "rollup": "^2.39.1",
         "rollup-plugin-terser": "^7.0.2",
         "rollup-plugin-typescript2": "^0.30.0",
+        "ts-node": "^9.1.1",
         "typedoc": "^0.20.28",
         "typescript": "^4.2.2"
     },

@@ -1,6 +1,8 @@
 /**
  * http://www.alloyteam.com/2013/12/js-calculate-the-number-of-bytes-occupied-by-a-string/
+ *
  * 计算字符串所占的内存字节数，默认使用 UTF-8 的编码方式计算，也可指定为 UTF-16
+ *
  * UTF-8 是一种可变长度的 Unicode 编码格式，使用 1 - 4 个字节为每个字符编码
  *
  * 000000 - 00007F（128 个代码）        0zzzzzzz（00-7F）                                       1 个字节

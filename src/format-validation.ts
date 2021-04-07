@@ -1,111 +1,307 @@
 /**
- * 验证邮箱格式
+ * 邮箱格式正则表达式
  */
-export const isEmail = (str: string) => /^[\w-]+@[\w-]+(?:\.[\w-]{2,3}){1,2}$/.test(str);
+export const regEmail = /^[\w-]+@[\w-]+(?:\.[\w-]{2,3}){1,2}$/;
+
+/**
+ * 验证邮箱格式
+ *
+ * @example
+ *
+ * ```typescript
+ * isEmail('example@hotmail.com')   // true
+ * ```
+ */
+export const isEmail = (str: string) => regEmail.test(str);
+
+/**
+ * 手机号正则表达式，根据工信部 2019 年最新公布的手机号段
+ */
+export const regMobile = /^(?:(?:\+|00)86)?1(?:3[\d]|4[5-7|9]|5[0-3|5-9]|6[5-7]|7[0-8]|8[\d]|9[189])\d{8}$/;
 
 /**
  * 验证手机号，根据工信部 2019 年最新公布的手机号段
+ *
+ * @example
+ *
+ * ```typescript
+ * isMobile('13000000000')  // true
+ * ```
  */
-export const isMobile = (str: string) => /^(?:(?:\+|00)86)?1(?:3[\d]|4[5-7|9]|5[0-3|5-9]|6[5-7]|7[0-8]|8[\d]|9[189])\d{8}$/.test(str);
+export const isMobile = (str: string) => regMobile.test(str);
+
+/**
+ * 电话号码正则表达式，规则为可选的区号（3 或 4 位）加横杠，后跟 7 或 8 位数字
+ */
+export const regPhone = /^(?:\d{3}-)?\d{8}$|^(?:\d{4}-)?\d{7}$/;
 
 /**
  * 验证电话号码，规则为可选的区号（3 或 4 位）加横杠，后跟 7 或 8 位数字
+ *
+ * @example
+ *
+ * ```typescript
+ * isPhone('010-12345678')  // true
+ * ```
  */
-export const isPhone = (str: string) =>/^(?:\d{3}-)?\d{8}$|^(?:\d{4}-)?\d{7}$/.test(str);
+export const isPhone = (str: string) => regPhone.test(str);
+
+/**
+ * URL 地址正则表达式
+ */
+export const regURL = /^(?:https?:\/\/)?[\w-]+(?:\.[\w-]+)+(?:[\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?$/;
+
 
 /**
  * 验证 URL 地址
+ *
+ * @example
+ *
+ * ```typescript
+ * isURL('https://www.qq.com')   // true
+ * ```
  */
-export const isURL = (str: string) => /^(?:https?:\/\/)?[\w-]+(?:\.[\w-]+)+(?:[\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?$/.test(str);
+export const isURL = (str: string) => regURL.test(str);
+
+/**
+ * 迅雷地址正则表达式
+ */
+export const regThunder = /^thunderx?:\/\/[a-zA-Z\d]+=$/;
 
 /**
  * 验证迅雷地址
+ *
+ * @example
+ *
+ * ```typescript
+ * isThunderURI('thunder://qufodhrwoi8vymouzhjpdmvyy2hpbmeuy29tl3nvd')  // true
+ * ```
  */
-export const isThunderURI = (str: string) => /^thunderx?:\/\/[a-zA-Z\d]+=$/.test(str);
+export const isThunderURI = (str: string) => regThunder.test(str);
+
+/**
+ * ed2k 地址正则表达式
+ */
+export const regEd2kURI = /^ed2k:\/\/\|file\|.+\|\/$/;
 
 /**
  * 验证 ed2k 地址
+ *
+ * @example
+ *
+ * ```typescript
+ * isEd2kURI('ed2k://|file|C6%A5%A3%A9%60.avi|/')     // true
+ * ```
  */
-export const isEd2kURI = (str: string) => /^ed2k:\/\/\|file\|.+\|\/$/.test(str);
+export const isEd2kURI = (str: string) => regEd2kURI.test(str);
+
+/**
+ * 磁力链接正则表达式
+ */
+export const regMagnetURI = /^magnet:\?xt=urn:btih:[0-9a-fA-F]{40,}.*$/;
 
 /**
  * 验证磁力链接
+ *
+ * @example
+ *
+ * ```typescript
+ * isMagnetURI('magnet:?xt=urn:btih:C510E15DB53588BDB089EF28F813FB21DFF4E93D')      // true
+ * ```
  */
-export const isMagnetURI = (str: string) => /^magnet:\?xt=urn:btih:[0-9a-fA-F]{40,}.*$/.test(str);
+export const isMagnetURI = (str: string) => regMagnetURI.test(str);
 
 /**
- * 验证 A 股代码
+ * A 股代码正则表达式，规则为 sh / sz / SH / SZ 后面跟六位数字
  */
-export const isAShareCode = (str: string) => /^(?:s[hz]|S[HZ])\d{6}$/.test(str);
+export const regAShareCode = /^(?:s[hz]|S[HZ])\d{6}$/;
 
 /**
- * 验证 md5
+ * 验证 A 股代码，规则为 sh / sz / SH / SZ 后面跟六位数字
+ *
+ * @example
+ *
+ * ```typescript
+ * isAShareCode('sh001896')     // true
+ * isAShareCode('sz001896')     // true
+ * isAShareCode('SH001896')     // true
+ * isAShareCode('SZ001896')     // true
+ * ```
  */
-export const isMD5 = (str: string) => /^[a-f\d]{32}|[A-F\d]{32}$/.test(str);
+export const isAShareCode = (str: string) => regAShareCode.test(str);
 
 /**
- * 验证语义化版本号
+ * md5 正则表达式，规则为 32 位十六进制数字（字母需要全大写或全小写）
  */
-export const isVersionCode = (str: string) => /^\d+(?:\.\d+){2}(?:-(?:alpha|beta|rc)\.\d+)?$/.test(str);
+export const regMD5 = /^[a-f\d]{32}|[A-F\d]{32}$/;
+
+/**
+ * 验证 md5，规则为 32 位十六进制数字（字母需要全大写或全小写）
+ *
+ * @example
+ *
+ * ```typescript
+ * isMD5('0e37e09b702d2815e32be7c7b65a62da')    // true
+ * ```
+ */
+export const isMD5 = (str: string) => regMD5.test(str);
+
+/**
+ * 语义化版本号正则表达式，规则为三个以点号为分隔的数字，后面跟可选的横杠与 alpha / beta / rc 三个单词，再跟可选的点号和数字
+ */
+export const regVersionCode = /^\d+(?:\.\d+){2}(?:-(?:alpha|beta|rc)(\.\d+)?)?$/
+
+/**
+ * 验证语义化版本号，规则为三个以点号为分隔的数字，后面跟可选的横杠与 alpha / beta / rc 三个单词，再跟可选的点号和数字
+ *
+ * @example
+ *
+ * ```typescript
+ * isVersionCode('0.0.1')           // true
+ * isVersionCode('0.1.0-alpha')     // true
+ * isVersionCode('0.2.1-beta.5')    // true
+ * isVersionCode('1.0.0-rc')        // true
+ * ```
+ */
+export const isVersionCode = (str: string) => regVersionCode.test(str);
+
+/**
+ * 视频地址正则表达式
+ */
+export const regVideoURL = /^https?:\/\/(?:.+\/)+.+\.(?:swf|avi|flv|mpg|rm|mov|wav|asf|3gp|mkv|rmvb|mp4)$/i;
 
 /**
  * 验证视频地址
  */
-export const isVideoURL = (str: string) => /^https?:\/\/(?:.+\/)+.+\.(?:swf|avi|flv|mpg|rm|mov|wav|asf|3gp|mkv|rmvb|mp4)$/i.test(str);
+export const isVideoURL = (str: string) => regVideoURL.test(str);
+
+/**
+ * 图片地址正则表达式
+ */
+export const regImageURL = /^https?:\/\/(?:.+\/)+.+\.(?:gif|png|jpg|jpeg|webp|svg|psd|bmp|tif)$/i;
 
 /**
  * 验证图片地址
  */
-export const isImageURL = (str: string) => /^https?:\/\/(?:.+\/)+.+\.(?:gif|png|jpg|jpeg|webp|svg|psd|bmp|tif)$/i.test(str);
+export const isImageURL = (str: string) => regImageURL.test(str);
+
+/**
+ * Linux 文件地址正则表达式
+ */
+export const regLinuxFileAddress = /^\/(?:[^\/\s]+\/)*[^\/\s]+$/;
 
 /**
  * 验证 Linux 文件地址
  */
-export const isLinuxFileAddress = (str: string) => /^\/(?:[^\/\s]+\/)*[^\/\s]+$/.test(str);
+export const isLinuxFileAddress = (str: string) => regLinuxFileAddress.test(str);
+
+/**
+ * Linux 隐藏文件地址正则表达式
+ */
+export const regLinuxHiddenFileAddress = /^\/(?:[^\/\s]+\/)*\.[^\/\s]+/;
 
 /**
  * 验证 Linux 隐藏文件地址
  */
-export const isLinuxHiddenFileAddress = (str: string) => /^\/(?:[^\/\s]+\/)*\.[^\/\s]+/.test(str);
+export const isLinuxHiddenFileAddress = (str: string) => regLinuxHiddenFileAddress.test(str);
+
+/**
+ * Windows 文件地址正则表达式
+ */
+export const regWindowsFileAddress = /^[a-zA-Z]:\\(?:[^\\\s]+\\)*[^\\\s]+$/;
 
 /**
  * 验证 Windows 文件地址
  */
-export const isWindowsFileAddress = (str: string) => /^[a-zA-Z]:\\(?:[^\\\s]+\\)*[^\\\s]*$/.test(str);
+export const isWindowsFileAddress = (str: string) => regWindowsFileAddress.test(str);
+
+/**
+ * Linux 文件夹地址正则表达式
+ */
+export const regLinuxFolderAddress = /^\/(?:[^\/\s]+\/)*$/;
 
 /**
  * 验证 Linux 文件夹地址
  */
-export const isLinuxFolderAddress = (str: string) => /^\/(?:[^\/\s]+\/)*$/.test(str);
+export const isLinuxFolderAddress = (str: string) => regLinuxFolderAddress.test(str);
+
+/**
+ * Windows 文件夹地址正则表达式
+ */
+export const regWindowsFolderAddress = /^[a-zA-Z]:\\(?:[^\\\s]+\\)*$/;
 
 /**
  * 验证 Windows 文件夹地址
  */
 export const isWindowsFolderAddress = (str: string) => /^[a-zA-Z]:\\(?:[^\\\s]+\\)*$/.test(str);
 
-export const isLinuxPath = (str: string) => isLinuxFileAddress(str) || isLinuxFolderAddress(str);
-
-export const isWindowsPath = (str: string) => isWindowsFileAddress(str) || isWindowsFolderAddress(str);
-
-export const isPath = (str: string) => isLinuxPath(str) || isWindowsPath(str);
-
 /**
- * @description 验证 12 小时制时间格式（hh:mm:ss）
+ * Linux 路径正则表达式，包含文件地址和文件夹地址
  */
-export const is12Time = (str: string) => /^(?:1[0-2]|0?[1-9]):[0-5]\d:[0-5]\d$/.test(str);
+export const regLinuxPath = /^\/(?:[^\/\s]+\/)*[^\/\s]*$/;
 
 /**
- * @description 验证 24 小时制时间格式（HH:mm:ss）
+ * 验证 Linux 路径，包含文件地址和文件夹地址
  */
-export const is24Time = (str: string) => /^(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d$/.test(str);
+export const isLinuxPath = (str: string) => regLinuxPath.test(str);
 
 /**
- * @description 验证 base64 字符串
+ * Windows 路径正则表达式，包含文件地址和文件夹地址
+ */
+export const regWindowsPath = /^[a-zA-Z]:\\(?:[^\\\s]+\\)*[^\\\s]*$/;
+
+/**
+ * 验证 Windows 路径，包含文件地址和文件夹地址
+ */
+export const isWindowsPath = (str: string) => regWindowsPath.test(str);
+
+/**
+ * 路径正则表达式，包含 Linux 和 Windows 的文件地址和文件夹地址
+ */
+export const regPath = /^\/(?:[^\/\s]+\/)*[^\/\s]*|[a-zA-Z]:\\(?:[^\\\s]+\\)*[^\\\s]*$/;
+
+/**
+ * 验证路径，包含 Linux 和 Windows 的文件地址和文件夹地址
+ */
+export const isPath = (str: string) => regPath.test(str);
+
+/**
+ * 12 小时制时间格式（hh:mm:ss）正则表达式
+ */
+export const reg12Time = /^(?:1[0-2]|0?[1-9]):[0-5]\d:[0-5]\d$/;
+
+/**
+ * 验证 12 小时制时间格式（hh:mm:ss）
+ *
+ * @example
+ *
+ * ```typescript
+ * is12Time('10:05:35')     // true
+ * ```
+ */
+export const is12Time = (str: string) => reg12Time.test(str);
+
+/**
+ * 24 小时制时间格式（HH:mm:ss）正则表达式
+ */
+export const reg24Time = /^(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d$/;
+
+/**
+ * 验证 24 小时制时间格式（HH:mm:ss）
+ */
+export const is24Time = (str: string) => reg24Time.test(str);
+
+/**
+ * base64 字符串
+ */
+
+/**
+ * 验证 base64 字符串
  */
 export const isBase64 = (str: string) => /^\s*data:(?:[a-z]+\/[a-z0-9-+.]+(?:;[a-z-]+=[a-z0-9-]+)?)?(?:;base64)?,([a-z0-9!$&',()*+;=\-._~:@\/?%\s]*?)\s*$/i.test(str);
 
 export const isChineseName = (str: string) => /^[\u4e00-\u9fa5·]{2,16}$/.test(str);
-export const isEnglishName = (str: string) => /(^[a-zA-Z]+[a-zA-Z\s]{0,20}[a-zA-Z]+$)/.test(str);
+export const isEnglishName = (str: string) => /^[a-zA-Z]+[a-zA-Z\s]{0,20}[a-zA-Z]+$/.test(str);
 
 
 /**
