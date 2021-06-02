@@ -11,7 +11,7 @@
         "clean-before": "rimraf ./dist",
         "build-bundle": "rollup -c",
         "build-typescript-declaration": "tsc -d && api-extractor run",
-        "build-document": "typedoc src/index.ts",
+        "build-document": "ts-node ./script/build-docs.ts",
         "clean-after": "rimraf ./temp-typings && rimraf ./docs",
         "build": "npm run clean-before && npm run build-bundle && npm run build-typescript-declaration && npm run build-document && npm run clean-after"
     },

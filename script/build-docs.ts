@@ -6,12 +6,19 @@ app.options.addReader(new TSConfigReader());
 app.options.addReader(new TypeDocReader());
 app.bootstrap({
     // typedoc options here
-    entryPoints: ['./src/object.ts'],
+    entryPoints: ["./src/array.ts"],
+    theme: 'minimal'
 });
 
-const project = app.convert();
+const project = app.convert()!;
 
-let text = '';
+
+const categoryMap = {
+    'array.ts': '数组相关方法',
+    'browser.ts': '浏览器相关方法',
+    'color.ts': '颜色相关方法',
+    'date.ts': '日期相关方法',
+}
 
 for (const item of project!.children!) {
     const signatures = item.signatures?.[0];
@@ -20,16 +27,18 @@ for (const item of project!.children!) {
         continue;
     }
 
+    // console.log(signatures);
+
     if (/browser/.test(signatures.sources![0].fileName)) {
         continue;
     }
-
-    console.log(signatures);
     const { name, comment } = signatures;
 
     if (!comment) {
         continue;
     }
+
+    console.log(signatures);
 
     const example = comment.tags.find(x => x.tagName === 'example');
 
@@ -39,14 +48,6 @@ for (const item of project!.children!) {
 
     const code = example.text.replace(/\n+```typescript\n|\n```\n+/g, '').split('\n');
     const a = code.map(x => x.split(/\s+\/\/\s+/));
-
-    text += `
-import { ${name} } from '../src';
-    
-test('${name}', () => {
-    ${a.map(([expression, result]) => `expect(${expression}).toEqual(${result});`).join('\n    ')}
-});
-    `;
 }
 
-fs.writeFileSync('./test/bundle.test.ts', text);
+app.generateDocs(project, 'docs');

@@ -8,4 +8,4 @@ export * from './format-validation';
 export * from './function';
 export * from './statistics';
 export * from './string';
-export * from './type-validation';
+export * from './object';
