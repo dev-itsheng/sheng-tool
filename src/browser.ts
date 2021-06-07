@@ -103,7 +103,9 @@ export const scrollToTop = (millisecond: number = 1000) => {
  *
  * // ...用户操作完毕，弹框关闭，页面恢复
  *
+ * // 恢复页面滚动
  * reverseScroll();
+ * ```
  */
 export const preventScroll = () => {
     // 存储当前滚动位置

@@ -1,6 +1,8 @@
 /**
  * 去掉 HTML 标签
  *
+ * @param str 要转换的字符串
+ *
  * @example
  *
  * ```typescript
@@ -18,50 +20,77 @@ export const removeHTMLTag = (str: string) => str.replace(/<[^>]+>/g, '');
  * @example
  *
  * ```typescript
+ * numberToChinese(5)           // '五'
  * numberToChinese(13)          // '十三'
- * numberToChinese(13, true)    // '拾叄'
+ * numberToChinese(105)         // '一百零五'
+ * numberToChinese(1234)        // '一千二百三十四'
+ * numberToChinese(1000001001)  // '十亿零一千零一'
+ * numberToChinese(80000000)    // '八千万'
+ * numberToChinese(13, true)    // '拾叁'
  * ```
  */
-export const numberToChinese = (num: number, big = false): string => {
+export const numberToChinese = (num: number, big = false, prefixZero = false): string => {
 
     const unit = big ? '拾佰仟万亿' :  '十百千万亿',
           number = big ? '零壹贰叁肆伍陆柒捌玖' : '零一二三四五六七八九';
 
     if (num >= 1e8) {
-        return numberToChinese(Math.floor(num / 1e9), big) + unit[4] + numberToChinese(num % 1e9);
+        return numberToChinese(Math.floor(num / 1e8), big) + unit[4] + numberToChinese(num % 1e8, big, true);
     }
 
     if (num >= 1e4) {
-        return numberToChinese(Math.floor(num / 1e4), big) + unit[3] + numberToChinese(num % 1e4);
+        return numberToChinese(Math.floor(num / 1e4), big) + unit[3] + numberToChinese(num % 1e4, big, true);
     }
 
     let str = '';
     let addZero = false;
+    let read = false;
+
+
+    const zero = () => read && addZero ? '零' : '';
 
     if (num >= 1e3) {
         str += number[Math.floor(num / 1e3)] + unit[2];
         num = num % 1e3;
+        read = true;
     } else {
-        addZero = true;
+
+        if (prefixZero || read) {
+            addZero = true;
+        }
     }
 
     if (num >= 1e2) {
-        str += addZero ? '零': '' + number[Math.floor(num / 1e2)] + unit[1];
+        str += zero() + number[Math.floor(num / 1e2)] + unit[1];
+        num %= 1e2;
         addZero = false;
+        read = true;
     } else {
-        addZero = true;
+        if (prefixZero || read) {
+            addZero = true;
+        }
     }
 
     if (num >= 10) {
-        str += addZero ? '零': '' + number[Math.floor(num / 10)] + unit[0]
+        const ten = Math.floor(num / 10);
+        str += zero() + ((ten !== 1 || read) ? number[Math.floor(num / 10)] : '') + unit[0];
+        num %= 10;
         addZero = false;
+        read = true;
     } else {
-        addZero = true;
+        if (prefixZero || read) {
+            addZero = true;
+        }
     }
 
     if (num > 0) {
-        str += addZero ? '零': '' + number[num];
+        str += zero() + number[num];
     }
+
+    if (prefixZero && str) {
+        str = '零' + str;
+    }
+
 
     return str;
 };
@@ -75,6 +104,7 @@ export const numberToChinese = (num: number, big = false): string => {
  *
  * ```typescript
  * checkPwdStrong('1')      // 1
+ * checkPwdStrong('a')      // 1
  * checkPwdStrong('1a')     // 2
  * checkPwdStrong('1Aa')    // 3
  * checkPwdStrong('1Aa_')   // 4
@@ -100,21 +130,4 @@ export const checkPwdStrong = (password: string) => {
     }
 
     return level;
-};
-
-/**
- * 数字千分位分割
- *
- * @param num 被处理的数字
- *
- * @example
- *
- * ```typescript
- * divideNumberByThousandth(123456789)  // '1,2345,6789'
- * ```
- */
-export const divideNumberByThousandth = (num: number) => {
-    return num.toString().indexOf('.') !== -1
-        ? num.toLocaleString()
-        : num.toString().replace(/(\d)(?=\d{3}$)/g, '$1,');
 };

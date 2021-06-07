@@ -22,7 +22,7 @@ export const countOccurrences = <T>(arr: T[], value: T) => arr.filter(v => eq(v,
 /**
  * 返回数组中指定下标间隔的元素，首先选取第一个元素，然后跳过间隔数 -1 的元素选取下一个，以此类推。
  *
- * @category 数组相关方法
+ * @category 数组相关
  *
  * @param arr 被遍历的数组
  * @param nth 指定的下标间隔
@@ -33,4 +33,4 @@ export const countOccurrences = <T>(arr: T[], value: T) => arr.filter(v => eq(v,
  * everyNth([1, 2, 3, 4], 2)    // [1, 3]
  * ```
  */
-export const everyNth = <T>(arr: T[], nth: number) => arr.filter((v, i) => i % nth === nth - 1);
+export const everyNth = <T>(arr: T[], nth: number) => arr.filter((v, i) => i % nth === 0);

@@ -5,7 +5,7 @@ export * from './color';
 export * from './date';
 export * from './extra';
 export * from './format-validation';
-export * from './function';
 export * from './statistics';
 export * from './string';
 export * from './object';
+export * from './number';

@@ -3,27 +3,39 @@ import { sum, initial, last, map } from 'lodash-es';
 /**
  * 生成一个数字验证器，以验证特殊（不超过特定值及小数点位数）的数字格式。
  *
+ * @param max 最大值
+ * @param decimalLength 小数位数，默认为 `0`
+ * @param allowMinus 是否允许为负数，默认为 `false`
+ *
  * @example
  *
  * ```typescript
+ * generateNumberValidator(50, 2)('hello')        // false
+ * generateNumberValidator(50)('1.5')             // false
  * generateNumberValidator(50, 2)('49.95')        // true
+ * generateNumberValidator(50, 2)('-1')           // false
+ * generateNumberValidator(50, 2, true)('-1')     // true
  * generateNumberValidator(50, 1)('80')           // false
  * generateNumberValidator(50, 1)('30.25')        // false
  * ```
  */
-export const generateNumberValidator = (max: number, decimalLength: number = 0) => {
+export const generateNumberValidator = (max: number, decimalLength: number = 0, allowMinus = false) => {
     return (str: string) => {
         if (!isNumberString(str)) {
             return false;
         }
 
-        if (decimalLength && !(new RegExp(`\\.\\d{${decimalLength}}$`)).test(str)) {
+        if (decimalLength && str.includes('.') && !(new RegExp(`\\.\\d{${decimalLength}}$`)).test(str)) {
             return false;
         }
 
         const num = parseFloat(str);
 
         if (!decimalLength && !Number.isInteger(num)) {
+            return false;
+        }
+
+        if (!allowMinus && num < 0) {
             return false;
         }
 
@@ -330,6 +342,7 @@ export const isEnglishName = (str: string) => /^[a-zA-Z]+[a-zA-Z\s]{0,20}[a-zA-Z
  * @example
  *
  * ```typescript
+ * isBankCardCode('000')                    // false
  * isBankCardCode('6212263602033054274')    // true
  * ```
  */
@@ -382,6 +395,7 @@ export const isNonNewEnergyCarNumber = (str: string) => /^[京津沪渝冀豫云
  *
  * ```typescript
  * isCarNumber('浙AD12345')    // true
+ * isCarNumber('京L50137')     // true
  * ```
  */
 export const isCarNumber = (str: string) => isNewEnergyCarNumber(str) || isNonNewEnergyCarNumber(str);
@@ -601,6 +615,10 @@ export const isMacAddress = (str: string) => /^(?:(?:[0-9a-f]{2}:){5}|(?:[0-9a-f
  * @example
  *
  * ```typescript
+ * isIdentity('hello')                  // false
+ * isIdentity('99048219810811486X')     // false
+ * isIdentity('41048219811311486X')     // false
+ * isIdentity('410482810811486')        // true
  * isIdentity('41048219810811486X')     // true
  * isIdentity('530121198907165303')     // true
  * ```

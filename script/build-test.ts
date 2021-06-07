@@ -6,7 +6,7 @@ app.options.addReader(new TSConfigReader());
 app.options.addReader(new TypeDocReader());
 app.bootstrap({
     // typedoc options here
-    entryPoints: ['./src/object.ts'],
+    entryPoints: ['./src/index.ts'],
 });
 
 const project = app.convert();

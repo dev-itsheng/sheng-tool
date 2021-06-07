@@ -1,24 +1,32 @@
 import { Application, TSConfigReader, TypeDocReader } from 'typedoc';
-import fs from 'fs';
 
 const app = new Application();
 app.options.addReader(new TSConfigReader());
 app.options.addReader(new TypeDocReader());
 app.bootstrap({
     // typedoc options here
-    entryPoints: ["./src/array.ts"],
+    entryPoints: ["./src/index.ts"],
     theme: 'minimal'
 });
 
 const project = app.convert()!;
 
-
 const categoryMap = {
     'array.ts': '数组相关方法',
     'browser.ts': '浏览器相关方法',
+    'browser-type-validation.ts': '浏览器类型判断相关方法',
     'color.ts': '颜色相关方法',
     'date.ts': '日期相关方法',
-}
+    'extra.ts': '额外方法',
+    'format-validation.ts': '数据格式判断相关方法',
+    'number.ts': '数字相关方法',
+    'object.ts': '对象相关方法',
+    'statistics.ts': '统计相关方法',
+    'string.ts': '字符串相关方法',
+};
+
+// @ts-ignore
+project.groups[0].categories = Object.values(categoryMap).map(title => 1 && { title, children: [] });
 
 for (const item of project!.children!) {
     const signatures = item.signatures?.[0];
@@ -27,27 +35,13 @@ for (const item of project!.children!) {
         continue;
     }
 
-    // console.log(signatures);
+    const { fileName } = signatures.sources![0];
 
-    if (/browser/.test(signatures.sources![0].fileName)) {
-        continue;
-    }
-    const { name, comment } = signatures;
+    // @ts-ignore
+    const cat = categoryMap[fileName];
 
-    if (!comment) {
-        continue;
-    }
+    // @ts-ignore
+    project.groups[0].categories.find(category => category.title === cat).children.push(item);
 
-    console.log(signatures);
-
-    const example = comment.tags.find(x => x.tagName === 'example');
-
-    if (!example) {
-        continue;
-    }
-
-    const code = example.text.replace(/\n+```typescript\n|\n```\n+/g, '').split('\n');
-    const a = code.map(x => x.split(/\s+\/\/\s+/));
 }
-
 app.generateDocs(project, 'docs');
