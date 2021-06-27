@@ -1,7 +1,8 @@
 {
     "name": "sheng-tool",
-    "version": "1.0.0",
-    "description": "",
+    "version": "0.0.1",
+    "description": "a simple tool",
+    "homepage": "https://gitee.com/itsheng/sheng-tool",
     "main": "dist/index.cjs.js",
     "module": "dist/index.esm.js",
     "typings": "dist/index.d.ts",
@@ -15,8 +16,8 @@
         "clean-after": "rimraf ./temp-typings && rimraf ./docs",
         "build": "npm run clean-before && npm run build-bundle && npm run build-typescript-declaration && npm run build-document && npm run clean-after"
     },
-    "author": "",
-    "license": "ISC",
+    "author": "dev-itsheng",
+    "license": "MIT",
     "devDependencies": {
         "@babel/core": "^7.10.2",
         "@babel/preset-env": "^7.10.2",
@@ -41,5 +42,7 @@
         "typedoc": "^0.20.28",
         "typescript": "^4.2.2"
     },
-    "dependencies": {}
+    "files": [
+        "dist/"
+    ]
 }
