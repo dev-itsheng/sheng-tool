@@ -1,6 +1,6 @@
 {
     "name": "sheng-tool",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "a simple tool",
     "homepage": "https://gitee.com/itsheng/sheng-tool",
     "main": "dist/index.cjs.js",
@@ -9,12 +9,12 @@
     "scripts": {
         "build-test": "ts-node ./script/build-test.ts",
         "test": "jest",
-        "clean-before": "rimraf ./dist",
+        "clean-before": "rimraf ./dist && rimraf ./temp-typings && rimraf ./docs",
         "build-bundle": "rollup -c",
         "build-typescript-declaration": "tsc -d && api-extractor run",
         "build-document": "ts-node ./script/build-docs.ts",
-        "clean-after": "rimraf ./temp-typings && rimraf ./docs",
-        "build": "npm run clean-before && npm run build-bundle && npm run build-typescript-declaration && npm run build-document && npm run clean-after"
+        "clean-after": "rimraf ./temp-typings",
+        "build": "npm run clean-before && npm run build-test && npm run test && npm run build-bundle && npm run build-typescript-declaration && npm run build-document && npm run clean-after"
     },
     "author": "dev-itsheng",
     "license": "MIT",
@@ -43,6 +43,7 @@
         "typescript": "^4.2.2"
     },
     "files": [
-        "dist/"
+        "dist/",
+        "docs/"
     ]
 }

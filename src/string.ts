@@ -60,7 +60,7 @@ export const byteLen = (str: string, charset: 'utf-8' | 'utf-16' = 'utf-8') => {
  * truncate('hello world', 5)                       // 'he...'
  * truncate('hello world', 300)                     // 'hello world'
  * truncate('hello world', 8, '--__')               // 'hell--__'
- * truncate('hello world hello world hello world')  // 'hello world hello world he...'
+ * truncate('hello world hello world hello world')  // 'hello world hello world hel...'
  * ```
  *
  * @param target        目标字符串

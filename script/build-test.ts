@@ -25,7 +25,7 @@ for (const item of project!.children!) {
     }
 
     console.log(signatures);
-    const { name, comment } = signatures;
+    const {name, comment} = signatures;
 
     if (!comment) {
         continue;
@@ -48,5 +48,10 @@ test('${name}', () => {
 });
     `;
 }
+
+// 报错就是文件夹已经创建了，忽略掉即可
+try {
+    fs.mkdirSync('test');
+} catch {}
 
 fs.writeFileSync('./test/bundle.test.ts', text);

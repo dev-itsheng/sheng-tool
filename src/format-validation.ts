@@ -13,6 +13,7 @@ import { sum, initial, last, map } from 'lodash-es';
  * generateNumberValidator(50, 2)('hello')        // false
  * generateNumberValidator(50)('1.5')             // false
  * generateNumberValidator(50, 2)('49.95')        // true
+ * generateNumberValidator(50, 2)('1.5')          // true
  * generateNumberValidator(50, 2)('-1')           // false
  * generateNumberValidator(50, 2, true)('-1')     // true
  * generateNumberValidator(50, 1)('80')           // false
@@ -25,7 +26,7 @@ export const generateNumberValidator = (max: number, decimalLength: number = 0, 
             return false;
         }
 
-        if (decimalLength && str.includes('.') && !(new RegExp(`\\.\\d{${decimalLength}}$`)).test(str)) {
+        if (decimalLength && str.includes('.') && !(new RegExp(`\\.\\d{0,${decimalLength}}$`)).test(str)) {
             return false;
         }
 
