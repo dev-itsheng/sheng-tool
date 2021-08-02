@@ -1,4 +1,4 @@
-import { eq } from 'lodash-es';
+import { eq, uniq, isEqual } from 'lodash-es';
 
 /**
  * 检查给定数组中某元素出现的次数，采用 `SameValueZero` 算法来比较（与 `===` 的区别为 `NaN` 与 `NaN` 相等）。
@@ -34,3 +34,32 @@ export const countOccurrences = <T>(arr: T[], value: T) => arr.filter(v => eq(v,
  * ```
  */
 export const everyNth = <T>(arr: T[], nth: number) => arr.filter((v, i) => i % nth === 0);
+
+/**
+ * 判断数组是否包含有相同元素，可通过参数来区分浅比较和深比较
+ *
+ * @param arr 要检查的数组
+ * @param deep 是否深比较，默认为 `false`
+ *
+ * @example
+ *
+ * ```typescript
+ * isUniqItem([1, 1, 2, 3])                    // false
+ * isUniqItem([1, 2, 3])                       // true
+ * isUniqItem([{ a: 1 }, { a: 1 }])            // true
+ * isUniqItem([{ a: 1 }, { a: 1 }], true)      // false
+ * ```
+ */
+export const isUniqItem = (arr: any[], deep = false) => {
+    if (!deep) {
+        return uniq(arr).length === arr.length;
+    } else {
+        return arr.some((item, index) => {
+            for (let i = index + 1; i < arr.length; i++) {
+                if (isEqual(item, arr[i])) {
+                    return false;
+                }
+            }
+        });
+    }
+};

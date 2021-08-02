@@ -12,6 +12,20 @@ export const getQueryString = (name: string) => {
 };
 
 /**
+ * 将 URL 片段与当前域名拼合，组成完成 URL
+ *
+ * @param url URL 片段，为域名后面的内容（不包含开头的斜杠）
+ *
+ * @example
+ *
+ * ```typescript
+ * // 假设当前域名为 https://www.example.com
+ * getFullUrl('edit.html?query=1')      // 'https://www.example.com/edit.html?query=1'
+ * ```
+ */
+export const getFullUrl = (url: string) => `${location.origin}/${url}`;
+
+/**
  * 动态引入 JS CDN 文件，返回一个 Promise，当加载完毕时为 `resolve` 状态，加载失败后为 `reject`。
  *
  * 其中配置的 `defer` 和 `async` 对应 `<script>` 标签的两种属性
@@ -138,3 +152,37 @@ export const elementIsVisibleInViewport = (el: Element, partiallyVisible = false
         ? ((top > 0 && top < innerHeight) || (bottom > 0 && bottom < innerHeight)) && ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
         : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
 };
+
+/**
+ * Promise 形式的等待，等待指定毫秒数后 resolve 空值
+ *
+ * @param millseconds 毫秒数
+ *
+ * @example
+ *
+ * ```typescript
+ * (async () => {
+ *     console.log(1);      // 输出 1
+ *     await wait(350);     // 等待 350 毫秒
+ *     console.log(2);      // 输出 2
+ * })();
+ * ```
+ */
+export const wait = (millseconds: number) => new Promise<void>(resolve => setTimeout(() => resolve(), millseconds));
+
+/**
+ * Promise 形式的等待，与 `wait` 不一样的是，它等待的单位是秒
+ *
+ * @param seconds 秒数
+ *
+ * @example
+ *
+ * ```typescript
+ * (async () => {
+ *     console.log(1);                  // 输出 1
+ *     await waitForSeconds(1.5);       // 等待 1.5 秒
+ *     console.log(2);                  // 输出 2
+ * })();
+ * ```
+ */
+export const waitForSeconds = (seconds: number) => wait(seconds * 1000);

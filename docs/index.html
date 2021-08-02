@@ -2722,6 +2722,9 @@ img {
 			<a href="modules.html#getfirstdateinquarter" class="tsd-kind-icon">get<wbr>First<wbr>Date<wbr>InQuarter</a>
 		</li>
 		<li class=" tsd-kind-function">
+			<a href="modules.html#getfullurl" class="tsd-kind-icon">get<wbr>Full<wbr>Url</a>
+		</li>
+		<li class=" tsd-kind-function">
 			<a href="modules.html#getlastdateinmonth" class="tsd-kind-icon">get<wbr>Last<wbr>Date<wbr>InMonth</a>
 		</li>
 		<li class=" tsd-kind-function">
@@ -2884,6 +2887,9 @@ img {
 			<a href="modules.html#isurl" class="tsd-kind-icon">isURL</a>
 		</li>
 		<li class=" tsd-kind-function">
+			<a href="modules.html#isuniqitem" class="tsd-kind-icon">is<wbr>Uniq<wbr>Item</a>
+		</li>
+		<li class=" tsd-kind-function">
 			<a href="modules.html#isusername" class="tsd-kind-icon">is<wbr>Username</a>
 		</li>
 		<li class=" tsd-kind-function">
@@ -2943,6 +2949,12 @@ img {
 		<li class=" tsd-kind-function">
 			<a href="modules.html#variance" class="tsd-kind-icon">variance</a>
 		</li>
+		<li class=" tsd-kind-function">
+			<a href="modules.html#wait" class="tsd-kind-icon">wait</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="modules.html#waitforseconds" class="tsd-kind-icon">wait<wbr>For<wbr>Seconds</a>
+		</li>
 	</ul>
 </nav>
 <div class="container container-main">
@@ -2953,7 +2965,8 @@ img {
 			</a>
 			<p>一个工具库。</p>
 			<p>单测达到了 100% 覆盖率，覆盖了常用的函数。</p>
-			<p>由于 Gitee Page 现在无法生成文档，不得不把文档发布到 npm 上去。点击 <a href="https://unpkg.com/browse/sheng-tool/docs/index.html">unpkg 上的这个链接</a>可以阅读文档。</p>
+			<p>由于 Gitee Page 现在无法生成文档，不得不把文档发布到 npm 上去。点击 <a href="https://unpkg.com/browse/sheng-tool/docs/index.html">unpkg 上的这个链接</a>，再点击右上角的「View Raw」可以阅读文档。</p>
+			<p>对于每个依赖或间接依赖此库的项目而言，需要多包含 1.3MB 左右的文档资源。</p>
 			<p>当 Gitee 恢复之后会第一时间生成在线文档并删除 npm，抱歉。</p>
 		</div>
 		<div style="position:relative;"><a name="typedoc-main-index" class="tsd-anchor"></a></div>
@@ -2966,15 +2979,19 @@ img {
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#countoccurrences" class="tsd-kind-icon">count<wbr>Occurrences</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#everynth" class="tsd-kind-icon">every<wbr>Nth</a></li>
+							<li class="tsd-kind-function"><a href="modules.html#isuniqitem" class="tsd-kind-icon">is<wbr>Uniq<wbr>Item</a></li>
 						</ul>
 						<h3>浏览器相关方法 Functions</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-function"><a href="modules.html#copytexttoclipboard" class="tsd-kind-icon">copy<wbr>Text<wbr>ToClipboard</a></li>
 							<li class="tsd-kind-function"><a href="modules.html#elementisvisibleinviewport" class="tsd-kind-icon">element<wbr>IsVisible<wbr>InViewport</a></li>
+							<li class="tsd-kind-function"><a href="modules.html#getfullurl" class="tsd-kind-icon">get<wbr>Full<wbr>Url</a></li>
 							<li class="tsd-kind-function"><a href="modules.html#getquerystring" class="tsd-kind-icon">get<wbr>Query<wbr>String</a></li>
 							<li class="tsd-kind-function"><a href="modules.html#injectscript" class="tsd-kind-icon">inject<wbr>Script</a></li>
 							<li class="tsd-kind-function"><a href="modules.html#preventscroll" class="tsd-kind-icon">prevent<wbr>Scroll</a></li>
 							<li class="tsd-kind-function"><a href="modules.html#scrolltotop" class="tsd-kind-icon">scroll<wbr>ToTop</a></li>
+							<li class="tsd-kind-function"><a href="modules.html#wait" class="tsd-kind-icon">wait</a></li>
+							<li class="tsd-kind-function"><a href="modules.html#waitforseconds" class="tsd-kind-icon">wait<wbr>For<wbr>Seconds</a></li>
 						</ul>
 						<h3>浏览器类型判断相关方法 Functions</h3>
 						<ul class="tsd-index-list">
@@ -3189,6 +3206,52 @@ img {
 					</li>
 				</ul>
 			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="isuniqitem" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> is<wbr>Uniq<wbr>Item</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">is<wbr>Uniq<wbr>Item<span class="tsd-signature-symbol">(</span>arr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>, deep<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in array.ts:53</li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>判断数组是否包含有相同元素，可通过参数来区分浅比较和深比较</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>example</dt>
+								<dd><pre><code class="language-typescript"><span style="color: #795E26">isUniqItem</span><span style="color: #000000">([</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">])                    </span><span style="color: #008000">// false</span>
+<span style="color: #795E26">isUniqItem</span><span style="color: #000000">([</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">])                       </span><span style="color: #008000">// true</span>
+<span style="color: #795E26">isUniqItem</span><span style="color: #000000">([{ </span><span style="color: #001080">a:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> }, { </span><span style="color: #001080">a:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> }])            </span><span style="color: #008000">// true</span>
+<span style="color: #795E26">isUniqItem</span><span style="color: #000000">([{ </span><span style="color: #001080">a:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> }, { </span><span style="color: #001080">a:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> }], </span><span style="color: #0000FF">true</span><span style="color: #000000">)      </span><span style="color: #008000">// false</span>
+</code></pre>
+								</dd>
+							</dl>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>arr: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>要检查的数组</p>
+								</div>
+							</li>
+							<li>
+								<h5>deep: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>是否深比较，默认为 <code>false</code></p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+					</li>
+				</ul>
+			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>浏览器相关方法 Functions</h2>
@@ -3202,7 +3265,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in browser.ts:58</li>
+								<li>Defined in browser.ts:72</li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3233,7 +3296,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in browser.ts:134</li>
+								<li>Defined in browser.ts:148</li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3257,6 +3320,44 @@ img {
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="getfullurl" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Full<wbr>Url</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">get<wbr>Full<wbr>Url<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in browser.ts:26</li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>将 URL 片段与当前域名拼合，组成完成 URL</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>example</dt>
+								<dd><pre><code class="language-typescript"><span style="color: #008000">// 假设当前域名为 https://www.example.com</span>
+<span style="color: #795E26">getFullUrl</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;edit.html?query=1&#039;</span><span style="color: #000000">)      </span><span style="color: #008000">// &#039;https://www.example.com/edit.html?query=1&#039;</span>
+</code></pre>
+								</dd>
+							</dl>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>url: <span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>URL 片段，为域名后面的内容（不包含开头的斜杠）</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -3301,7 +3402,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in browser.ts:39</li>
+								<li>Defined in browser.ts:53</li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3368,7 +3469,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in browser.ts:110</li>
+								<li>Defined in browser.ts:124</li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3417,7 +3518,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in browser.ts:73</li>
+								<li>Defined in browser.ts:87</li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3435,6 +3536,88 @@ img {
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="wait" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> wait</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">wait<span class="tsd-signature-symbol">(</span>millseconds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in browser.ts:171</li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Promise 形式的等待，等待指定毫秒数后 resolve 空值</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>example</dt>
+								<dd><pre><code class="language-typescript"><span style="color: #000000">(</span><span style="color: #0000FF">async</span><span style="color: #000000"> () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #098658">1</span><span style="color: #000000">);      </span><span style="color: #008000">// 输出 1</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">wait</span><span style="color: #000000">(</span><span style="color: #098658">350</span><span style="color: #000000">);     </span><span style="color: #008000">// 等待 350 毫秒</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #098658">2</span><span style="color: #000000">);      </span><span style="color: #008000">// 输出 2</span>
+<span style="color: #000000">})();</span>
+</code></pre>
+								</dd>
+							</dl>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>millseconds: <span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>毫秒数</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="waitforseconds" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> wait<wbr>For<wbr>Seconds</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">wait<wbr>For<wbr>Seconds<span class="tsd-signature-symbol">(</span>seconds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in browser.ts:188</li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Promise 形式的等待，与 <code>wait</code> 不一样的是，它等待的单位是秒</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>example</dt>
+								<dd><pre><code class="language-typescript"><span style="color: #000000">(</span><span style="color: #0000FF">async</span><span style="color: #000000"> () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #098658">1</span><span style="color: #000000">);                  </span><span style="color: #008000">// 输出 1</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">waitForSeconds</span><span style="color: #000000">(</span><span style="color: #098658">1.5</span><span style="color: #000000">);       </span><span style="color: #008000">// 等待 1.5 秒</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #098658">2</span><span style="color: #000000">);                  </span><span style="color: #008000">// 输出 2</span>
+<span style="color: #000000">})();</span>
+</code></pre>
+								</dd>
+							</dl>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>seconds: <span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>秒数</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
 			</section>
