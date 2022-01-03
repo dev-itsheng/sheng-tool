@@ -131,3 +131,26 @@ export const checkPwdStrong = (password: string) => {
 
     return level;
 };
+
+/**
+ * 将 URL Pattern 表达式转成正则表达式，URL Pattern 的语法参考[这里](https://developer.chrome.com/extensions/match_patterns)。
+ *
+ * @example
+ *
+ * ```typescript
+ * getRegexpByUrlPattern('*://www.baidu.com/').toString()      // '/^(http|https|file|ftp):\/\/[^/]*?w\.baidu\.com\/\/?/'
+ * ```
+ * @param pattern URL Pattern 字符串
+ */
+export const getRegexpByUrlPattern = (pattern: string) => {
+    const [, scheme, host, path] = /^(\*|http|https|file|ftp):\/\/(\*|(?:\*\.)?[^*/]+)?\/(.*)$/.exec(pattern)!;
+
+    return new RegExp(
+        `^
+        ${scheme === '*' ? '(http|https|file|ftp)' : scheme}
+        ://
+        ${host === '*' ? '[^/]+?' : `[^/]*?${host.slice(2).replace(/\./g, '\\.')}`}
+        ${path === '*' ? '(/.*)?' : `/${path.replace(/\*/g, '.*?')}/?`}
+    `.replace(/\s+/g, ''),
+    );
+};
