@@ -149,7 +149,7 @@ export const getRegexpByUrlPattern = (pattern: string) => {
         `^
         ${scheme === '*' ? '(http|https|file|ftp)' : scheme}
         ://
-        ${host === '*' ? '[^/]+?' : `[^/]*?${host.slice(2).replace(/\./g, '\\.')}`}
+        ${host === '*' ? '[^/]+?' : (/^\*\./.test(host) ? `[^/]*?${host.slice(2)}` : host).replace(/\./g, '\\.')}
         ${path === '*' ? '(/.*)?' : `/${path.replace(/\*/g, '.*?')}/?`}
     `.replace(/\s+/g, ''),
     );
