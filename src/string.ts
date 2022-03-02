@@ -1,3 +1,6 @@
+import { isBoolean, isDate, isNumber, isString } from 'lodash-es';
+import dayjs from 'dayjs/esm';
+
 /**
  * 计算字符串所占的内存字节数，默认使用 UTF-8 的编码方式计算，也可指定为 UTF-16。
  *
@@ -68,3 +71,45 @@ export const byteLen = (str: string, charset: 'utf-8' | 'utf-16' = 'utf-8') => {
  * @param truncation    省略符
  */
 export const truncate = (target: string, length = 30, truncation = '...') => target.length > length ? target.slice(0, length - truncation.length) + truncation : target;
+
+/**
+ * 转义 SQL 字符串，在模板字符串前面使用
+ *
+ * @example
+ *
+ * ```typescript
+ * escapeSqlTemplate`SELECT * FROM table WHERE name = ${'a'}`   // 'SELECT * FROM table WHERE name = \'a\''
+ * ```
+ *
+ */
+export const escapeSqlTemplate = (strings: string, ...values: any[]) => {
+    const escapeValue = (val: any) => {
+        if (isBoolean(val)) {
+            return val ? 'true' : 'false';
+        }
+
+        if (isNumber(val)) {
+            return val.toString();
+        }
+
+        if (isDate(val)) {
+            return dayjs(val).format('YYYY-MM-DD HH:mm:ss');
+        }
+
+        if (isString(val)) {
+            return `'${val.replace(/'/g, '\\\'')}'`;
+        }
+
+        throw new Error('暂不支持此类型');
+    }
+
+    let result = '';
+
+    for (let i = 0; i < values.length; i++) {
+        result += strings[i] + escapeValue(values[i]);
+    }
+
+    result += strings[strings.length - 1];
+
+    return result;
+}

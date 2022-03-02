@@ -24,8 +24,7 @@ for (const item of project!.children!) {
         continue;
     }
 
-    console.log(signatures);
-    const {name, comment} = signatures;
+    const { name, comment } = signatures;
 
     if (!comment) {
         continue;
