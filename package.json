@@ -15,7 +15,7 @@
         "build-document": "ts-node ./script/build-docs.ts",
         "clean-after": "rimraf ./temp-typings",
         "build": "npm run clean-before && npm run build-test && npm run test && npm run build-bundle && npm run build-typescript-declaration && npm run build-document && npm run clean-after",
-        "publish": "npm publish --registry=https://registry.npmjs.org"
+        "publish-package": "npm publish --registry=https://registry.npmjs.org"
     },
     "author": "dev-itsheng",
     "license": "MIT",
