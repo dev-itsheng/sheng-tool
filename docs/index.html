@@ -3002,9 +3002,8 @@ img {
 			</a>
 			<p>一个工具库。</p>
 			<p>单测达到了 100% 覆盖率，覆盖了常用的函数。</p>
-			<p>由于 Gitee Page 现在无法生成文档，不得不把文档发布到 npm 上去。点击 <a href="https://unpkg.com/browse/sheng-tool/docs/index.html">unpkg 上的这个链接</a>，再点击右上角的「View Raw」可以阅读文档。</p>
+			<p>由于 Gitee Page 现在无法生成文档，不得不把文档发布到 npm 上去。点击 <a href="https://unpkg.com/sheng-tool/docs/index.html">unpkg 上的这个链接</a> 可以阅读文档。</p>
 			<p>对于每个依赖或间接依赖此库的项目而言，需要多包含 1.3MB 左右的文档资源。</p>
-			<p>当 Gitee 恢复之后会第一时间生成在线文档并删除 npm，抱歉。</p>
 		</div>
 		<div style="position:relative;"><a name="typedoc-main-index" class="tsd-anchor"></a></div>
 		<section class="tsd-panel-group tsd-index-group">
@@ -6495,16 +6494,17 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in object.ts:25</li>
+								<li>Defined in object.ts:28</li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>将对象中的所有键驼峰化，支持循环引用检查，用于前后端交互（以及后端与数据库交互）时的数据格式转换</p>
+								<p>将对象中的所有键驼峰化，支持循环引用检查，用于前后端交互（以及后端与数据库交互）时的数据格式转换，支持对象数组</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
-								<dd><pre><code class="language-typescript"><span style="color: #795E26">camelCaseObject</span><span style="color: #000000">({ </span><span style="color: #A31515">&#039;a-b&#039;</span><span style="color: #001080">:</span><span style="color: #000000"> { </span><span style="color: #001080">c_d:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> } })   </span><span style="color: #008000">// { aB: { cD: 1 } }</span>
+								<dd><pre><code class="language-typescript"><span style="color: #795E26">camelCaseObject</span><span style="color: #000000">({ </span><span style="color: #A31515">&#039;a-b&#039;</span><span style="color: #001080">:</span><span style="color: #000000"> { </span><span style="color: #001080">c_d:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> } })       </span><span style="color: #008000">// { aB: { cD: 1 } }</span>
+<span style="color: #795E26">camelCaseObject</span><span style="color: #000000">([{ </span><span style="color: #001080">a_b:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> }, { </span><span style="color: #001080">c_d:</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000"> }])    </span><span style="color: #008000">// [{ aB: 1 }, { cD: 2 }]</span>
 </code></pre>
 								</dd>
 							</dl>
@@ -6532,16 +6532,17 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in object.ts:38</li>
+								<li>Defined in object.ts:42</li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>将对象中的所有键下划线化，支持循环引用检查，用于前后端交互（以及后端与数据库交互）时的数据格式转换</p>
+								<p>将对象中的所有键下划线化，支持循环引用检查，用于前后端交互（以及后端与数据库交互）时的数据格式转换，支持对象数组</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
-								<dd><pre><code class="language-typescript"><span style="color: #795E26">snakeCaseObject</span><span style="color: #000000">({ </span><span style="color: #001080">aB:</span><span style="color: #000000"> { </span><span style="color: #001080">cD:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> } })   </span><span style="color: #008000">// { a_b: { c_d: 1 } }</span>
+								<dd><pre><code class="language-typescript"><span style="color: #795E26">snakeCaseObject</span><span style="color: #000000">({ </span><span style="color: #001080">aB:</span><span style="color: #000000"> { </span><span style="color: #001080">cD:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> } })           </span><span style="color: #008000">// { a_b: { c_d: 1 } }</span>
+<span style="color: #795E26">snakeCaseObject</span><span style="color: #000000">([{ </span><span style="color: #001080">aB:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> }, { </span><span style="color: #001080">cD:</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000"> }])      </span><span style="color: #008000">// [{ a_b: 1 }, { c_d: 2 }]</span>
 </code></pre>
 								</dd>
 							</dl>
