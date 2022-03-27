@@ -1,6 +1,6 @@
 {
     "name": "sheng-tool",
-    "version": "0.0.15",
+    "version": "0.0.16",
     "description": "a simple tool",
     "homepage": "https://gitee.com/itsheng/sheng-tool",
     "main": "dist/index.cjs.js",

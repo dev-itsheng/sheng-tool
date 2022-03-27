@@ -79,8 +79,8 @@ export const truncate = (target: string, length = 30, truncation = '...') => tar
  *
  * ```typescript
  * escapeSqlTemplate`SELECT * FROM table WHERE name = ${'a'}`   // 'SELECT * FROM table WHERE name = \'a\''
+ * escapeSqlTemplate`${JSON.stringify({a: 1})}`                 // '\'{\\\"a\\\":1}\''
  * ```
- *
  */
 export const escapeSqlTemplate = (strings: string, ...values: any[]) => {
     const escapeValue = (val: any) => {
@@ -97,7 +97,18 @@ export const escapeSqlTemplate = (strings: string, ...values: any[]) => {
         }
 
         if (isString(val)) {
-            return `'${val.replace(/'/g, '\\\'')}'`;
+            const CHARS_ESCAPE_MAP = {
+                '\0'   : '\\0',
+                '\b'   : '\\b',
+                '\t'   : '\\t',
+                '\n'   : '\\n',
+                '\r'   : '\\r',
+                '\x1a' : '\\Z',
+                '"'    : '\\"',
+                '\''   : '\\\'',
+                '\\'   : '\\\\'
+            };
+            return `'${val.replace(/[0\b\t\n\r\x1a"'\\]/g, str => CHARS_ESCAPE_MAP[str as keyof typeof CHARS_ESCAPE_MAP])}'`;
         }
 
         throw new Error('暂不支持此类型');
