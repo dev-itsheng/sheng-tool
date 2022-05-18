@@ -108,7 +108,7 @@ export const escapeSqlTemplate = (strings: string, ...values: any[]) => {
                 '\''   : '\\\'',
                 '\\'   : '\\\\'
             };
-            return `'${val.replace(/[0\b\t\n\r\x1a"'\\]/g, str => CHARS_ESCAPE_MAP[str as keyof typeof CHARS_ESCAPE_MAP])}'`;
+            return `'${val.replace(/[\0\b\t\n\r\x1a"'\\]/g, str => CHARS_ESCAPE_MAP[str as keyof typeof CHARS_ESCAPE_MAP])}'`;
         }
 
         throw new Error('暂不支持此类型');
