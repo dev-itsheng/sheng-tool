@@ -2,7 +2,7 @@
     "name": "sheng-tool",
     "version": "0.0.20",
     "description": "a simple tool",
-    "homepage": "https://gitee.com/itsheng/sheng-tool",
+    "homepage": "https://github.com/dev-itsheng/sheng-tool",
     "main": "dist/index.cjs.js",
     "module": "dist/index.esm.js",
     "typings": "dist/index.d.ts",
