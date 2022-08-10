@@ -2714,10 +2714,10 @@ img {
 			<a href="modules.html#checkpwdstrong" class="tsd-kind-icon">check<wbr>Pwd<wbr>Strong</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="modules.html#copy" class="tsd-kind-icon">copy</a>
+			<a href="modules.html#copyhtml" class="tsd-kind-icon">copyHTML</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="modules.html#copytexttoclipboard" class="tsd-kind-icon">copy<wbr>Text<wbr>ToClipboard</a>
+			<a href="modules.html#copytext" class="tsd-kind-icon">copy<wbr>Text</a>
 		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter">
 			<a href="modules.html#countoccurrences" class="tsd-kind-icon">count<wbr>Occurrences</a>
@@ -2755,6 +2755,9 @@ img {
 		<li class=" tsd-kind-function">
 			<a href="modules.html#getfullurl" class="tsd-kind-icon">get<wbr>Full<wbr>Url</a>
 		</li>
+		<li class=" tsd-kind-function tsd-has-type-parameter">
+			<a href="modules.html#getlabelbyvalue" class="tsd-kind-icon">get<wbr>Label<wbr>ByValue</a>
+		</li>
 		<li class=" tsd-kind-function">
 			<a href="modules.html#getlastdateinmonth" class="tsd-kind-icon">get<wbr>Last<wbr>Date<wbr>InMonth</a>
 		</li>
@@ -2766,6 +2769,12 @@ img {
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="modules.html#getregexpbyurlpattern" class="tsd-kind-icon">get<wbr>Regexp<wbr>ByUrl<wbr>Pattern</a>
+		</li>
+		<li class=" tsd-kind-function tsd-has-type-parameter">
+			<a href="modules.html#getvaluebyanothervalue" class="tsd-kind-icon">get<wbr>Value<wbr>ByAnother<wbr>Value</a>
+		</li>
+		<li class=" tsd-kind-function tsd-has-type-parameter">
+			<a href="modules.html#getvaluebylabel" class="tsd-kind-icon">get<wbr>Value<wbr>ByLabel</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="modules.html#getweeksinmonth" class="tsd-kind-icon">get<wbr>Weeks<wbr>InMonth</a>
@@ -2914,6 +2923,9 @@ img {
 		<li class=" tsd-kind-function">
 			<a href="modules.html#isspider" class="tsd-kind-icon">is<wbr>Spider</a>
 		</li>
+		<li class=" tsd-kind-function tsd-has-type-parameter">
+			<a href="modules.html#issubset" class="tsd-kind-icon">is<wbr>Subset</a>
+		</li>
 		<li class=" tsd-kind-function">
 			<a href="modules.html#isthunderuri" class="tsd-kind-icon">is<wbr>ThunderURI</a>
 		</li>
@@ -2937,6 +2949,9 @@ img {
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="modules.html#isweixin" class="tsd-kind-icon">is<wbr>Wei<wbr>Xin</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="modules.html#isweixinminiprogram" class="tsd-kind-icon">is<wbr>Wei<wbr>Xin<wbr>Mini<wbr>Program</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="modules.html#isweixincode" class="tsd-kind-icon">is<wbr>Weixin<wbr>Code</a>
@@ -2967,6 +2982,9 @@ img {
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="modules.html#removehtmltag" class="tsd-kind-icon">removeHTMLTag</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="modules.html#replacevaluefromobject" class="tsd-kind-icon">replace<wbr>Value<wbr>From<wbr>Object</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="modules.html#rgb2hex" class="tsd-kind-icon">rgb2hex</a>
@@ -3001,9 +3019,8 @@ img {
 				<h2>sheng-tool</h2>
 			</a>
 			<p>一个工具库。</p>
-			<p>单测达到了 100% 覆盖率，覆盖了常用的函数。</p>
-			<p>由于 Gitee Page 现在无法生成文档，不得不把文档发布到 npm 上去。点击 <a href="https://unpkg.com/sheng-tool/docs/index.html">unpkg 上的这个链接</a> 可以阅读文档。</p>
-			<p>对于每个依赖或间接依赖此库的项目而言，需要多包含 1.3MB 左右的文档资源。</p>
+			<p>除浏览器相关函数外，单测达到了 100% 覆盖率，覆盖了常用的函数。</p>
+			<p>文档部署到了 npm 上。点击 <a href="https://unpkg.com/sheng-tool/docs/index.html">unpkg 上的这个链接</a> 可以阅读文档。</p>
 		</div>
 		<div style="position:relative;"><a name="typedoc-main-index" class="tsd-anchor"></a></div>
 		<section class="tsd-panel-group tsd-index-group">
@@ -3015,12 +3032,16 @@ img {
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#countoccurrences" class="tsd-kind-icon">count<wbr>Occurrences</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#everynth" class="tsd-kind-icon">every<wbr>Nth</a></li>
+							<li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#getlabelbyvalue" class="tsd-kind-icon">get<wbr>Label<wbr>ByValue</a></li>
+							<li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#getvaluebyanothervalue" class="tsd-kind-icon">get<wbr>Value<wbr>ByAnother<wbr>Value</a></li>
+							<li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#getvaluebylabel" class="tsd-kind-icon">get<wbr>Value<wbr>ByLabel</a></li>
+							<li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#issubset" class="tsd-kind-icon">is<wbr>Subset</a></li>
 							<li class="tsd-kind-function"><a href="modules.html#isuniqitem" class="tsd-kind-icon">is<wbr>Uniq<wbr>Item</a></li>
 						</ul>
 						<h3>浏览器相关方法 Functions</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-function"><a href="modules.html#copy" class="tsd-kind-icon">copy</a></li>
-							<li class="tsd-kind-function"><a href="modules.html#copytexttoclipboard" class="tsd-kind-icon">copy<wbr>Text<wbr>ToClipboard</a></li>
+							<li class="tsd-kind-function"><a href="modules.html#copyhtml" class="tsd-kind-icon">copyHTML</a></li>
+							<li class="tsd-kind-function"><a href="modules.html#copytext" class="tsd-kind-icon">copy<wbr>Text</a></li>
 							<li class="tsd-kind-function"><a href="modules.html#elementisvisibleinviewport" class="tsd-kind-icon">element<wbr>IsVisible<wbr>InViewport</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#getasyncvalue" class="tsd-kind-icon">get<wbr>Async<wbr>Value</a></li>
 							<li class="tsd-kind-function"><a href="modules.html#getfullurl" class="tsd-kind-icon">get<wbr>Full<wbr>Url</a></li>
@@ -3040,6 +3061,7 @@ img {
 							<li class="tsd-kind-function"><a href="modules.html#isqqbrowser" class="tsd-kind-icon">isQQBrowser</a></li>
 							<li class="tsd-kind-function"><a href="modules.html#isspider" class="tsd-kind-icon">is<wbr>Spider</a></li>
 							<li class="tsd-kind-function"><a href="modules.html#isweixin" class="tsd-kind-icon">is<wbr>Wei<wbr>Xin</a></li>
+							<li class="tsd-kind-function"><a href="modules.html#isweixinminiprogram" class="tsd-kind-icon">is<wbr>Wei<wbr>Xin<wbr>Mini<wbr>Program</a></li>
 							<li class="tsd-kind-function"><a href="modules.html#isios" class="tsd-kind-icon">isiOS</a></li>
 						</ul>
 						<h3>颜色相关方法 Functions</h3>
@@ -3126,6 +3148,7 @@ img {
 						<h3>对象相关方法 Functions</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#camelcaseobject" class="tsd-kind-icon">camel<wbr>Case<wbr>Object</a></li>
+							<li class="tsd-kind-function"><a href="modules.html#replacevaluefromobject" class="tsd-kind-icon">replace<wbr>Value<wbr>From<wbr>Object</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#snakecaseobject" class="tsd-kind-icon">snake<wbr>Case<wbr>Object</a></li>
 						</ul>
 						<h3>统计相关方法 Functions</h3>
@@ -3156,7 +3179,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in array.ts:20</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/array.ts#L18">array.ts:18</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3208,7 +3231,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in array.ts:36</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/array.ts#L32">array.ts:32</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3247,6 +3270,230 @@ img {
 					</li>
 				</ul>
 			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+				<a name="getlabelbyvalue" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Label<wbr>ByValue</h3>
+				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+					<li class="tsd-signature tsd-kind-icon">get<wbr>Label<wbr>ByValue&lt;T&gt;<span class="tsd-signature-symbol">(</span>arr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">NonNullable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">]</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/array.ts#L84">array.ts:84</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>在一个对象数组中，根据指定的 <code>value</code> 找对应的 <code>label</code>（如果有多个，返回第一个），如果没找到，返回 <code>undefined</code>。</p>
+							</div>
+							<p>通常配合组件库的选择器使用。</p>
+							<dl class="tsd-comment-tags">
+								<dt>example</dt>
+								<dd><pre><code class="language-typescript"><span style="color: #795E26">getLabelByValue</span><span style="color: #000000">([{ </span><span style="color: #001080">value:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #001080">label:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;1&#039;</span><span style="color: #000000"> }, { </span><span style="color: #001080">value:</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #001080">label:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2&#039;</span><span style="color: #000000"> }], </span><span style="color: #098658">1</span><span style="color: #000000">)   </span><span style="color: #008000">// &#039;1&#039;</span>
+<span style="color: #795E26">getLabelByValue</span><span style="color: #000000">([{ </span><span style="color: #001080">value:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #001080">label:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;1&#039;</span><span style="color: #000000"> }, { </span><span style="color: #001080">value:</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #001080">label:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2&#039;</span><span style="color: #000000"> }], </span><span style="color: #098658">3</span><span style="color: #000000">)   </span><span style="color: #008000">// undefined</span>
+</code></pre>
+								</dd>
+							</dl>
+						</div>
+						<h4 class="tsd-type-parameters-title">Type parameters</h4>
+						<ul class="tsd-type-parameters">
+							<li>
+								<h4>T<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></h4>
+							</li>
+						</ul>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>arr: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>对象数组</p>
+								</div>
+							</li>
+							<li>
+								<h5>value: <span class="tsd-signature-type">any</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>指定的 value</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">NonNullable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">]</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+				<a name="getvaluebyanothervalue" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Value<wbr>ByAnother<wbr>Value</h3>
+				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+					<li class="tsd-signature tsd-kind-icon">get<wbr>Value<wbr>ByAnother<wbr>Value&lt;T&gt;<span class="tsd-signature-symbol">(</span>arr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span>, key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">T</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, anotherKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">NonNullable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">]</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/array.ts#L67">array.ts:67</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>在一个对象数组中，根据指定的 <code>key</code> 和 <code>value</code>，查找对应的元素（使用深比较，返回第一个），并返回其 <code>anotherKey</code> 对应的值，如果没找到，则返回 <code>undefined</code>。</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>example</dt>
+								<dd><pre><code class="language-typescript"><span style="color: #795E26">getValueByAnotherValue</span><span style="color: #000000">([{ </span><span style="color: #001080">a:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #001080">b:</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000"> }, { </span><span style="color: #001080">a:</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #001080">b:</span><span style="color: #000000"> </span><span style="color: #098658">3</span><span style="color: #000000"> }], </span><span style="color: #A31515">&#039;a&#039;</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;b&#039;</span><span style="color: #000000">)   </span><span style="color: #008000">// 3</span>
+<span style="color: #795E26">getValueByAnotherValue</span><span style="color: #000000">([{ </span><span style="color: #001080">a:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #001080">b:</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000"> }, { </span><span style="color: #001080">a:</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #001080">b:</span><span style="color: #000000"> </span><span style="color: #098658">3</span><span style="color: #000000"> }], </span><span style="color: #A31515">&#039;a&#039;</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;b&#039;</span><span style="color: #000000">)   </span><span style="color: #008000">// undefined</span>
+</code></pre>
+								</dd>
+							</dl>
+						</div>
+						<h4 class="tsd-type-parameters-title">Type parameters</h4>
+						<ul class="tsd-type-parameters">
+							<li>
+								<h4>T</h4>
+							</li>
+						</ul>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>arr: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>对象数组</p>
+								</div>
+							</li>
+							<li>
+								<h5>key: <span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">T</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>要查找的指定的 key</p>
+								</div>
+							</li>
+							<li>
+								<h5>value: <span class="tsd-signature-type">any</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>要查找的指定的 value</p>
+								</div>
+							</li>
+							<li>
+								<h5>anotherKey: <span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">T</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>需要返回的值对应的 key</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">NonNullable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">]</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+				<a name="getvaluebylabel" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Value<wbr>ByLabel</h3>
+				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+					<li class="tsd-signature tsd-kind-icon">get<wbr>Value<wbr>ByLabel&lt;T&gt;<span class="tsd-signature-symbol">(</span>arr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span>, label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">NonNullable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">]</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/array.ts#L101">array.ts:101</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>在一个对象数组中，根据指定的 <code>label</code> 找对应的 <code>value</code>（如果有多个，返回第一个），如果没找到，返回 <code>undefined</code>。</p>
+							</div>
+							<p>通常配合组件库的选择器使用。</p>
+							<dl class="tsd-comment-tags">
+								<dt>example</dt>
+								<dd><pre><code class="language-typescript"><span style="color: #795E26">getValueByLabel</span><span style="color: #000000">([{ </span><span style="color: #001080">value:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #001080">label:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;1&#039;</span><span style="color: #000000"> }, { </span><span style="color: #001080">value:</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #001080">label:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2&#039;</span><span style="color: #000000"> }], </span><span style="color: #A31515">&#039;1&#039;</span><span style="color: #000000">)   </span><span style="color: #008000">// 1</span>
+<span style="color: #795E26">getValueByLabel</span><span style="color: #000000">([{ </span><span style="color: #001080">value:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #001080">label:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;1&#039;</span><span style="color: #000000"> }, { </span><span style="color: #001080">value:</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #001080">label:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2&#039;</span><span style="color: #000000"> }], </span><span style="color: #A31515">&#039;3&#039;</span><span style="color: #000000">)   </span><span style="color: #008000">// undefined</span>
+</code></pre>
+								</dd>
+							</dl>
+						</div>
+						<h4 class="tsd-type-parameters-title">Type parameters</h4>
+						<ul class="tsd-type-parameters">
+							<li>
+								<h4>T<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></h4>
+							</li>
+						</ul>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>arr: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>对象数组</p>
+								</div>
+							</li>
+							<li>
+								<h5>label: <span class="tsd-signature-type">any</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>指定的 label</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">NonNullable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">]</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+				<a name="issubset" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> is<wbr>Subset</h3>
+				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+					<li class="tsd-signature tsd-kind-icon">is<wbr>Subset&lt;T&gt;<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span>, target<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span>, deep<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/array.ts#L121">array.ts:121</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>判断一个数组是否为另一个数组的子集，可通过参数来区分浅比较（SameValueZero）和深比较。</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>example</dt>
+								<dd><pre><code class="language-typescript"><span style="color: #795E26">isSubset</span><span style="color: #000000">([</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">], [</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">, </span><span style="color: #098658">4</span><span style="color: #000000">])            </span><span style="color: #008000">// true</span>
+<span style="color: #795E26">isSubset</span><span style="color: #000000">([</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">], [</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #098658">4</span><span style="color: #000000">])               </span><span style="color: #008000">// false</span>
+<span style="color: #795E26">isSubset</span><span style="color: #000000">([</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">], [</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">])            </span><span style="color: #008000">// false</span>
+<span style="color: #795E26">isSubset</span><span style="color: #000000">([</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">], [</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">, </span><span style="color: #098658">4</span><span style="color: #000000">])      </span><span style="color: #008000">// true</span>
+<span style="color: #795E26">isSubset</span><span style="color: #000000">([{ </span><span style="color: #001080">x:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> }], [{ </span><span style="color: #001080">x:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> }, { </span><span style="color: #001080">x:</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000"> }])   </span><span style="color: #008000">// true</span>
+<span style="color: #795E26">isSubset</span><span style="color: #000000">([{ </span><span style="color: #001080">x:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> }], [{ </span><span style="color: #001080">x:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> }], </span><span style="color: #0000FF">false</span><span style="color: #000000">)      </span><span style="color: #008000">// false</span>
+</code></pre>
+								</dd>
+							</dl>
+						</div>
+						<h4 class="tsd-type-parameters-title">Type parameters</h4>
+						<ul class="tsd-type-parameters">
+							<li>
+								<h4>T</h4>
+							</li>
+						</ul>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>source: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>需要判断的数组</p>
+								</div>
+							</li>
+							<li>
+								<h5>target: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>被判断的数组</p>
+								</div>
+							</li>
+							<li>
+								<h5>deep: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>是否深比较，默认为 <code>true</code></p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function">
 				<a name="isuniqitem" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagConst">Const</span> is<wbr>Uniq<wbr>Item</h3>
@@ -3257,19 +3504,20 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in array.ts:53</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/array.ts#L50">array.ts:50</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>判断数组是否包含有相同元素，可通过参数来区分浅比较和深比较</p>
+								<p>判断数组是否包含有相同元素，可通过参数来区分浅比较（此时使用 SameValueZero 算法）和深比较。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
-								<dd><pre><code class="language-typescript"><span style="color: #795E26">isUniqItem</span><span style="color: #000000">([</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">])                    </span><span style="color: #008000">// false</span>
-<span style="color: #795E26">isUniqItem</span><span style="color: #000000">([</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">])                       </span><span style="color: #008000">// true</span>
-<span style="color: #795E26">isUniqItem</span><span style="color: #000000">([{ </span><span style="color: #001080">a:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> }, { </span><span style="color: #001080">a:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> }])            </span><span style="color: #008000">// true</span>
-<span style="color: #795E26">isUniqItem</span><span style="color: #000000">([{ </span><span style="color: #001080">a:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> }, { </span><span style="color: #001080">a:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> }], </span><span style="color: #0000FF">true</span><span style="color: #000000">)      </span><span style="color: #008000">// false</span>
+								<dd><pre><code class="language-typescript"><span style="color: #795E26">isUniqItem</span><span style="color: #000000">([</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">])                     </span><span style="color: #008000">// false</span>
+<span style="color: #795E26">isUniqItem</span><span style="color: #000000">([</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">])                        </span><span style="color: #008000">// true</span>
+<span style="color: #795E26">isUniqItem</span><span style="color: #000000">([</span><span style="color: #0000FF">NaN</span><span style="color: #000000">, </span><span style="color: #0000FF">NaN</span><span style="color: #000000">])                       </span><span style="color: #008000">// false</span>
+<span style="color: #795E26">isUniqItem</span><span style="color: #000000">([{ </span><span style="color: #001080">a:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> }, { </span><span style="color: #001080">a:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> }])             </span><span style="color: #008000">// false</span>
+<span style="color: #795E26">isUniqItem</span><span style="color: #000000">([{ </span><span style="color: #001080">a:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> }, { </span><span style="color: #001080">a:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> }], </span><span style="color: #0000FF">false</span><span style="color: #000000">)      </span><span style="color: #008000">// true</span>
 </code></pre>
 								</dd>
 							</dl>
@@ -3283,9 +3531,9 @@ img {
 								</div>
 							</li>
 							<li>
-								<h5>deep: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+								<h5>deep: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
 								<div class="tsd-comment tsd-typography">
-									<p>是否深比较，默认为 <code>false</code></p>
+									<p>是否深比较，默认为 <code>true</code></p>
 								</div>
 							</li>
 						</ul>
@@ -3297,26 +3545,66 @@ img {
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>浏览器相关方法 Functions</h2>
 			<section class="tsd-panel tsd-member tsd-kind-function">
-				<a name="copy" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagConst">Const</span> copy</h3>
+				<a name="copyhtml" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> copyHTML</h3>
 				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">copy<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">copyHTML<span class="tsd-signature-symbol">(</span>html<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in browser.ts:244</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/browser.ts#L263">browser.ts:263</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>复制文本，兼容 IE9（需要 Promise Polyfill）</p>
+								<p>复制 HTML，一般用于富文本编辑器的场合。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
 								<dd><pre><code class="language-typescript"><span style="color: #000000">(</span><span style="color: #0000FF">async</span><span style="color: #000000"> () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
-<span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">text</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">copy</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;hello world&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">text</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">copyHTML</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;&lt;ul&gt;&lt;li&gt;hello&lt;/li&gt;&lt;li&gt;world&lt;/li&gt;&lt;/ul&gt;&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">    </span><span style="color: #008000">// 此时按 Ctrl / Command + V 到富文本编辑器中即可粘贴「hello」和「world」的有序列表</span>
+<span style="color: #000000">}</span>
+</code></pre>
+								</dd>
+							</dl>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>html: <span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>被复制的 HTML 字符串</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="copytext" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> copy<wbr>Text</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">copy<wbr>Text<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/browser.ts#L229">browser.ts:229</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>复制文本，兼容 IE9（需要 Promise Polyfill）。</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>example</dt>
+								<dd><pre><code class="language-typescript"><span style="color: #000000">(</span><span style="color: #0000FF">async</span><span style="color: #000000"> () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">text</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">copyText</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;hello world&#039;</span><span style="color: #000000">);</span>
 <span style="color: #000000">    </span><span style="color: #008000">// 此时按 Ctrl / Command + V 即可粘贴「hello world 文本」</span>
 <span style="color: #000000">}</span>
 </code></pre>
@@ -3337,37 +3625,6 @@ img {
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function">
-				<a name="copytexttoclipboard" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagConst">Const</span> copy<wbr>Text<wbr>ToClipboard</h3>
-				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">copy<wbr>Text<wbr>ToClipboard<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in browser.ts:112</li>
-							</ul>
-						</aside>
-						<div class="tsd-comment tsd-typography">
-							<div class="lead">
-								<p>复制内容到剪贴板</p>
-							</div>
-						</div>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>value: <span class="tsd-signature-type">string</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<p>复制的值</p>
-								</div>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function">
 				<a name="elementisvisibleinviewport" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagConst">Const</span> element<wbr>IsVisible<wbr>InViewport</h3>
 				<ul class="tsd-signatures tsd-kind-function">
@@ -3377,12 +3634,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in browser.ts:188</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/browser.ts#L173">browser.ts:173</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>判断元素是否在浏览器可视范围内，分为部分可见（默认）和完全可见两种情况</p>
+								<p>判断元素是否在浏览器可视范围内，分为部分可见（默认）和完全可见两种情况。</p>
 							</div>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3414,7 +3671,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in browser.ts:286</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/browser.ts#L295">browser.ts:295</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3488,12 +3745,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in browser.ts:26</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/browser.ts#L26">browser.ts:26</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>将 URL 片段与当前域名拼合，组成完成 URL</p>
+								<p>将 URL 片段与当前域名拼合，组成完成 URL。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -3526,7 +3783,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in browser.ts:6</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/browser.ts#L6">browser.ts:6</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3557,14 +3814,14 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in browser.ts:53</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/browser.ts#L53">browser.ts:53</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
 								<p>动态引入 JS CDN 文件，返回一个 Promise，当加载完毕时为 <code>resolve</code> 状态，加载失败后为 <code>reject</code>。</p>
 							</div>
-							<p>其中配置的 <code>defer</code> 和 <code>async</code> 对应 <code>&lt;script&gt;</code> 标签的两种属性</p>
+							<p>其中配置的 <code>defer</code> 和 <code>async</code> 对应 <code>&lt;script&gt;</code> 标签的两种属性。</p>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
 								<dd><pre><code class="language-typescript"><span style="color: #AF00DB">try</span><span style="color: #000000"> {</span>
@@ -3624,14 +3881,14 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in browser.ts:92</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/browser.ts#L92">browser.ts:92</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
 								<p>动态引入 JS 字符串，返回一个 Promise，当加载完毕时为 <code>resolve</code> 状态，加载失败后为 <code>reject</code>。</p>
 							</div>
-							<p>其中配置的 <code>defer</code> 和 <code>async</code> 对应 <code>&lt;script&gt;</code> 标签的两种属性</p>
+							<p>其中配置的 <code>defer</code> 和 <code>async</code> 对应 <code>&lt;script&gt;</code> 标签的两种属性。</p>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
 								<dd><pre><code class="language-typescript"><span style="color: #AF00DB">try</span><span style="color: #000000"> {</span>
@@ -3691,12 +3948,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in browser.ts:164</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/browser.ts#L149">browser.ts:149</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>一些业务场景，如弹框出现时，需要禁止页面滚动，这是兼容安卓和 iOS 禁止页面滚动的解决方案</p>
+								<p>一些业务场景，如弹框出现时，需要禁止页面滚动，这是兼容安卓和 iOS 禁止页面滚动的解决方案。</p>
 							</div>
 							<p>该函数返回另一个函数闭包，其存储了当前页面滚动位置，再次执行可以恢复页面状态。</p>
 							<dl class="tsd-comment-tags">
@@ -3740,12 +3997,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in browser.ts:127</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/browser.ts#L112">browser.ts:112</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>将页面平滑滚动到顶部</p>
+								<p>将页面平滑滚动到顶部。</p>
 							</div>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3765,18 +4022,18 @@ img {
 				<a name="wait" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagConst">Const</span> wait</h3>
 				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">wait<span class="tsd-signature-symbol">(</span>millseconds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">wait<span class="tsd-signature-symbol">(</span>milliseconds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in browser.ts:211</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/browser.ts#L196">browser.ts:196</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>Promise 形式的等待，等待指定毫秒数后 resolve 空值</p>
+								<p>Promise 形式的等待，等待指定毫秒数后 resolve 空值。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -3792,7 +4049,7 @@ img {
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>millseconds: <span class="tsd-signature-type">number</span></h5>
+								<h5>milliseconds: <span class="tsd-signature-type">number</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<p>毫秒数</p>
 								</div>
@@ -3812,12 +4069,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in browser.ts:228</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/browser.ts#L213">browser.ts:213</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>Promise 形式的等待，与 <code>wait</code> 不一样的是，它等待的单位是秒</p>
+								<p>Promise 形式的等待，与 <code>wait</code> 不一样的是，它等待的单位是秒。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -3856,7 +4113,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in browser-type-validation.ts:31</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/browser-type-validation.ts#L36">browser-type-validation.ts:36</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3878,7 +4135,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in browser-type-validation.ts:11</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/browser-type-validation.ts#L16">browser-type-validation.ts:16</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3900,7 +4157,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in browser-type-validation.ts:36</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/browser-type-validation.ts#L41">browser-type-validation.ts:41</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3922,7 +4179,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in browser-type-validation.ts:16</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/browser-type-validation.ts#L21">browser-type-validation.ts:21</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3944,7 +4201,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in browser-type-validation.ts:21</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/browser-type-validation.ts#L26">browser-type-validation.ts:26</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3966,12 +4223,34 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in browser-type-validation.ts:6</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/browser-type-validation.ts#L6">browser-type-validation.ts:6</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
 								<p>是否是微信浏览器，原理是检查 UA 中是否包含 <code>micromessenger</code>。</p>
+							</div>
+						</div>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="isweixinminiprogram" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> is<wbr>Wei<wbr>Xin<wbr>Mini<wbr>Program</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">is<wbr>Wei<wbr>Xin<wbr>Mini<wbr>Program<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/browser-type-validation.ts#L11">browser-type-validation.ts:11</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>是否是微信小程序环境（包括微信开发者工具），原理是检查 UA 中是否包含 <code>miniprogram</code>。</p>
 							</div>
 						</div>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -3988,7 +4267,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in browser-type-validation.ts:26</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/browser-type-validation.ts#L31">browser-type-validation.ts:31</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -4013,7 +4292,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in color.ts:46</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/color.ts#L46">color.ts:46</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -4051,7 +4330,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in color.ts:17</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/color.ts#L17">color.ts:17</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -4111,7 +4390,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in date.ts:13</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/date.ts#L13">date.ts:13</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -4154,7 +4433,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in date.ts:95</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/date.ts#L95">date.ts:95</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -4194,7 +4473,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in date.ts:26</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/date.ts#L26">date.ts:26</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -4231,7 +4510,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in date.ts:52</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/date.ts#L52">date.ts:52</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -4268,7 +4547,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in date.ts:39</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/date.ts#L39">date.ts:39</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -4305,7 +4584,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in date.ts:65</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/date.ts#L65">date.ts:65</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -4342,7 +4621,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in date.ts:109</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/date.ts#L109">date.ts:109</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -4385,7 +4664,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in date.ts:79</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/date.ts#L79">date.ts:79</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -4426,12 +4705,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in extra.ts:113</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/extra.ts#L113">extra.ts:113</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>检测密码强度，规则为出现数字、大写字母、小写字母、下划线分别加一分，返回总分</p>
+								<p>检测密码强度，规则为出现数字、大写字母、小写字母、下划线分别加一分，返回总分。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -4467,7 +4746,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in extra.ts:146</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/extra.ts#L146">extra.ts:146</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -4504,12 +4783,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in extra.ts:32</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/extra.ts#L32">extra.ts:32</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>将阿拉伯数字转换成中文数字，可以转换成小写（默认）或大写（银行数字用的那种）</p>
+								<p>将阿拉伯数字转换成中文数字，可以转换成小写（默认）或大写（银行数字用的那种）。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -4556,12 +4835,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in extra.ts:12</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/extra.ts#L12">extra.ts:12</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>去掉 HTML 标签</p>
+								<p>去掉 HTML 标签。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -4596,7 +4875,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:23</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L23">format-validation.ts:23</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -4670,12 +4949,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:290</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L290">format-validation.ts:290</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证 12 小时制时间格式（hh:mm:ss）</p>
+								<p>验证 12 小时制时间格式（hh:mm:ss）。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -4706,12 +4985,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:303</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L303">format-validation.ts:303</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证 24 小时制时间格式（HH:mm:ss）</p>
+								<p>验证 24 小时制时间格式（HH:mm:ss）。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -4742,12 +5021,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:136</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L136">format-validation.ts:136</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证 A 股代码，规则为 sh / sz / SH / SZ 后面跟六位数字</p>
+								<p>验证 A 股代码，规则为 sh / sz / SH / SZ 后面跟六位数字。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -4779,12 +5058,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:350</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L350">format-validation.ts:350</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证银行卡号</p>
+								<p>验证银行卡号。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -4814,12 +5093,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:314</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L314">format-validation.ts:314</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证 base64 字符串</p>
+								<p>验证 base64 字符串。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -4848,12 +5127,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:402</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L402">format-validation.ts:402</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证车牌号</p>
+								<p>验证车牌号。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -4883,12 +5162,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:459</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L459">format-validation.ts:459</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证中文</p>
+								<p>验证中文。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -4918,12 +5197,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:326</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L326">format-validation.ts:326</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证中文名</p>
+								<p>验证中文名。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -4953,12 +5232,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:526</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L526">format-validation.ts:526</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证日期字符串，允许中间用横杠或点连接</p>
+								<p>验证日期字符串，允许中间用横杠或点连接。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -4989,12 +5268,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:111</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L111">format-validation.ts:111</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证 ed2k 地址</p>
+								<p>验证 ed2k 地址。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -5023,7 +5302,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:56</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L56">format-validation.ts:56</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -5057,12 +5336,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:447</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L447">format-validation.ts:447</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证英文</p>
+								<p>验证英文。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -5092,12 +5371,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:471</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L471">format-validation.ts:471</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证小写字母</p>
+								<p>验证小写字母。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -5127,12 +5406,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:338</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L338">format-validation.ts:338</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证英文名</p>
+								<p>验证英文名。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -5162,12 +5441,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:483</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L483">format-validation.ts:483</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证大写字母</p>
+								<p>验证大写字母。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -5197,12 +5476,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:716</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L716">format-validation.ts:716</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证手机机身码，规则为 15 ~ 17 位数字</p>
+								<p>验证手机机身码，规则为 15 ~ 17 位数字。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -5231,12 +5510,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:424</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L424">format-validation.ts:424</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证 IPv4 地址</p>
+								<p>验证 IPv4 地址。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -5265,12 +5544,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:435</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L435">format-validation.ts:435</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证 IPv6 地址</p>
+								<p>验证 IPv6 地址。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -5299,12 +5578,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:627</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L627">format-validation.ts:627</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证身份证号码</p>
+								<p>验证身份证号码。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -5338,12 +5617,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:184</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L184">format-validation.ts:184</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证图片地址</p>
+								<p>验证图片地址。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -5372,12 +5651,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:513</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L513">format-validation.ts:513</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证整数字符串，</p>
+								<p>验证整数字符串。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -5410,12 +5689,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:599</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L599">format-validation.ts:599</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证 Java 包名</p>
+								<p>验证 Java 包名。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -5444,12 +5723,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:195</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L195">format-validation.ts:195</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证 Linux 文件地址</p>
+								<p>验证 Linux 文件地址。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -5478,12 +5757,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:228</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L228">format-validation.ts:228</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证 Linux 文件夹地址</p>
+								<p>验证 Linux 文件夹地址。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -5512,16 +5791,16 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:206</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L206">format-validation.ts:206</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证 Linux 隐藏文件地址</p>
+								<p>验证 Linux 隐藏文件地址。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
-								<dd><pre><code class="language-typescript"><span style="color: #795E26">isLinuxFileAddress</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;/home/vue-test/.gitignore&#039;</span><span style="color: #000000">)      </span><span style="color: #008000">// true</span>
+								<dd><pre><code class="language-typescript"><span style="color: #795E26">isLinuxHiddenFileAddress</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;/home/vue-test/.gitignore&#039;</span><span style="color: #000000">)      </span><span style="color: #008000">// true</span>
 </code></pre>
 								</dd>
 							</dl>
@@ -5546,12 +5825,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:251</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L251">format-validation.ts:251</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证 Linux 路径，包含文件地址和文件夹地址</p>
+								<p>验证 Linux 路径，包含文件地址和文件夹地址。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -5581,12 +5860,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:147</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L147">format-validation.ts:147</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证 md5，规则为 32 位十六进制数字（字母需要全大写或全小写）</p>
+								<p>验证 md5，规则为 32 位十六进制数字（字母需要全大写或全小写）。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -5615,7 +5894,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:611</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L611">format-validation.ts:611</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -5650,12 +5929,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:122</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L122">format-validation.ts:122</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证磁力链接</p>
+								<p>验证磁力链接。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -5684,7 +5963,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:67</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L67">format-validation.ts:67</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -5718,12 +5997,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:566</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L566">format-validation.ts:566</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证金额，规则为整数或两位小数</p>
+								<p>验证金额，规则为整数或两位小数。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -5755,12 +6034,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:379</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L379">format-validation.ts:379</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证新能源车车牌号</p>
+								<p>验证新能源车车牌号。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -5789,12 +6068,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:390</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L390">format-validation.ts:390</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证非新能源车车牌号</p>
+								<p>验证非新能源车车牌号。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -5823,12 +6102,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:498</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L498">format-validation.ts:498</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证数字字符串，不包含前导零</p>
+								<p>验证数字字符串，不包含前导零。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -5861,12 +6140,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:413</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L413">format-validation.ts:413</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证护照号码</p>
+								<p>验证护照号码。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -5895,12 +6174,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:277</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L277">format-validation.ts:277</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证路径，包含 Linux 和 Windows 的文件地址和文件夹地址</p>
+								<p>验证路径，包含 Linux 和 Windows 的文件地址和文件夹地址。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -5932,7 +6211,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:78</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L78">format-validation.ts:78</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -5966,12 +6245,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:538</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L538">format-validation.ts:538</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证邮政编码</p>
+								<p>验证邮政编码。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -6001,12 +6280,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:552</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L552">format-validation.ts:552</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证 QQ 号，规则为 5 ~ 10 位的整数，其中第一位不能为零</p>
+								<p>验证 QQ 号，规则为 5 ~ 10 位的整数，其中第一位不能为零。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -6038,12 +6317,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:100</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L100">format-validation.ts:100</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证迅雷地址</p>
+								<p>验证迅雷地址。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -6072,12 +6351,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:705</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L705">format-validation.ts:705</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证火车车次，规则为 <code>GCDZTSPKXLY</code> 或非零数字开头，后面跟 1 ~ 4 位数字</p>
+								<p>验证火车车次，规则为 <code>GCDZTSPKXLY</code> 或非零数字开头，后面跟 1 ~ 4 位数字。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -6109,7 +6388,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:89</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L89">format-validation.ts:89</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -6143,12 +6422,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:577</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L577">format-validation.ts:577</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证用户名，规则为大写字母、小写字母和数字，4 ~ 16 位</p>
+								<p>验证用户名，规则为大写字母、小写字母和数字，4 ~ 16 位。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -6177,12 +6456,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:161</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L161">format-validation.ts:161</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证语义化版本号，规则为三个以点号为分隔的数字，后面跟可选的横杠与 alpha / beta / rc 三个单词，再跟可选的点号和数字</p>
+								<p>验证语义化版本号，规则为三个以点号为分隔的数字，后面跟可选的横杠与 alpha / beta / rc 三个单词，再跟可选的点号和数字。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -6214,12 +6493,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:173</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L173">format-validation.ts:173</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证视频地址</p>
+								<p>验证视频地址。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -6249,12 +6528,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:588</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L588">format-validation.ts:588</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证微信号，规则为长度 6 ~ 20 位，以字母开头，后面可以跟字母，数字，横杠，下划线</p>
+								<p>验证微信号，规则为长度 6 ~ 20 位，以字母开头，后面可以跟字母，数字，横杠，下划线。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -6283,12 +6562,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:217</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L217">format-validation.ts:217</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证 Windows 文件地址</p>
+								<p>验证 Windows 文件地址。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -6317,12 +6596,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:239</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L239">format-validation.ts:239</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证 Windows 文件夹地址</p>
+								<p>验证 Windows 文件夹地址。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -6351,12 +6630,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in format-validation.ts:263</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/format-validation.ts#L263">format-validation.ts:263</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>验证 Windows 路径，包含文件地址和文件夹地址</p>
+								<p>验证 Windows 路径，包含文件地址和文件夹地址。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -6389,7 +6668,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in number.ts:16</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/number.ts#L16">number.ts:16</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -6440,7 +6719,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in number.ts:33</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/number.ts#L33">number.ts:33</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -6494,12 +6773,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in object.ts:28</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/object.ts#L28">object.ts:28</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>将对象中的所有键驼峰化，支持循环引用检查，用于前后端交互（以及后端与数据库交互）时的数据格式转换，支持对象数组</p>
+								<p>将对象中的所有键驼峰化，支持循环引用检查，用于前后端交互（以及后端与数据库交互）时的数据格式转换，支持对象数组。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -6528,6 +6807,65 @@ img {
 					</li>
 				</ul>
 			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="replacevaluefromobject" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> replace<wbr>Value<wbr>From<wbr>Object</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">replace<wbr>Value<wbr>From<wbr>Object<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, from<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, to<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, autoExecuteFunction<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/object.ts#L66">object.ts:66</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>将对象 / 数组中的某个值（或满足某个条件的值，使用 SameValueZero 算法）替换成另一个值（或将原值处理后的值），支持任意嵌套层级和复杂类型深比较。</p>
+							</div>
+							<p>该方法不会修改原对象 / 数组。</p>
+							<pre><code class="language-typescript"><span style="color: #795E26">replaceValueFromObject</span><span style="color: #000000">({ </span><span style="color: #001080">x:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> }, </span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">)                               </span><span style="color: #008000">// { x: 2 }</span>
+<span style="color: #795E26">replaceValueFromObject</span><span style="color: #000000">({ </span><span style="color: #001080">x:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> }, { </span><span style="color: #001080">x:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> }, </span><span style="color: #098658">2</span><span style="color: #000000">)                        </span><span style="color: #008000">// 2</span>
+<span style="color: #795E26">replaceValueFromObject</span><span style="color: #000000">({ </span><span style="color: #001080">x:</span><span style="color: #000000"> { </span><span style="color: #001080">y:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> } }, { </span><span style="color: #001080">y:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> }, </span><span style="color: #098658">2</span><span style="color: #000000">)                 </span><span style="color: #008000">// { x: 2 }</span>
+<span style="color: #795E26">replaceValueFromObject</span><span style="color: #000000">({ </span><span style="color: #001080">x:</span><span style="color: #000000"> { </span><span style="color: #001080">y:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> } }, </span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">)                        </span><span style="color: #008000">// { x: { y: 2 } }</span>
+<span style="color: #795E26">replaceValueFromObject</span><span style="color: #000000">([</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">, </span><span style="color: #098658">1</span><span style="color: #000000">], </span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;3&#039;</span><span style="color: #000000">)                         </span><span style="color: #008000">// [&#039;3&#039;, 2, 3, &#039;3&#039;]</span>
+<span style="color: #795E26">replaceValueFromObject</span><span style="color: #000000">([</span><span style="color: #0000FF">NaN</span><span style="color: #000000">, </span><span style="color: #0000FF">NaN</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">], </span><span style="color: #0000FF">NaN</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;3&#039;</span><span style="color: #000000">)                   </span><span style="color: #008000">// [&#039;3&#039;, &#039;3&#039;, 2, 3]</span>
+<span style="color: #795E26">replaceValueFromObject</span><span style="color: #000000">([</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">, </span><span style="color: #098658">1</span><span style="color: #000000">], </span><span style="color: #001080">v</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">v</span><span style="color: #000000"> % </span><span style="color: #098658">2</span><span style="color: #000000"> === </span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;3&#039;</span><span style="color: #000000">)          </span><span style="color: #008000">// [1, &#039;3&#039;, 3, 1]</span>
+<span style="color: #795E26">replaceValueFromObject</span><span style="color: #000000">([</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">, </span><span style="color: #098658">1</span><span style="color: #000000">], </span><span style="color: #001080">v</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">v</span><span style="color: #000000"> % </span><span style="color: #098658">2</span><span style="color: #000000"> === </span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #001080">y</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">y</span><span style="color: #000000"> + </span><span style="color: #098658">10</span><span style="color: #000000">)  </span><span style="color: #008000">// [1, 12, 3, 1]</span>
+</code></pre>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>obj: <span class="tsd-signature-type">any</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>被转换的数组 / 对象</p>
+								</div>
+							</li>
+							<li>
+								<h5>from: <span class="tsd-signature-type">any</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>某个值，或满足值的条件函数，此时接收 <code>obj</code> 中的部分值</p>
+								</div>
+							</li>
+							<li>
+								<h5>to: <span class="tsd-signature-type">any</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>另一个值，或处理值的函数，此时接收 <code>obj</code> 中的部分值</p>
+								</div>
+							</li>
+							<li>
+								<h5>autoExecuteFunction: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>当 <code>from</code> 和 <code>to</code> 是函数时，是否作为转换条件执行，默认为 <code>true</code>，对于替换函数的特殊场景时需要置为 <code>false</code></p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
 				<a name="snakecaseobject" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagConst">Const</span> snake<wbr>Case<wbr>Object</h3>
@@ -6538,12 +6876,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in object.ts:42</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/object.ts#L42">object.ts:42</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>将对象中的所有键下划线化，支持循环引用检查，用于前后端交互（以及后端与数据库交互）时的数据格式转换，支持对象数组</p>
+								<p>将对象中的所有键下划线化，支持循环引用检查，用于前后端交互（以及后端与数据库交互）时的数据格式转换，支持对象数组。</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
@@ -6585,7 +6923,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in statistics.ts:15</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/statistics.ts#L15">statistics.ts:15</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -6623,7 +6961,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in statistics.ts:42</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/statistics.ts#L42">statistics.ts:42</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -6660,7 +6998,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in statistics.ts:29</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/statistics.ts#L29">statistics.ts:29</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -6701,7 +7039,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in string.ts:24</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/string.ts#L24">string.ts:24</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -6752,13 +7090,21 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in string.ts:85</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/string.ts#L93">string.ts:93</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>转义 SQL 字符串，在模板字符串前面使用</p>
+								<p>转义 SQL 字符串，在模板字符串前面使用。</p>
 							</div>
+							<p>具体转换规则为：</p>
+							<ul>
+								<li>如果是布尔类型的值，<code>true</code> 转换成 <code>&#39;true&#39;</code>，<code>false</code> 转换成 <code>&#39;false&#39;</code>。</li>
+								<li>如果是数字类型的值，转换成对应的字符串。</li>
+								<li>如果是日期类型的值，转换成 <code>YYYY-MM-DD HH:mm:ss</code> 对应的字符串。</li>
+								<li>如果是字符串，会对引号、换行符、制表符等特殊字符进行转义。</li>
+								<li>其他类型则会报错。</li>
+							</ul>
 							<dl class="tsd-comment-tags">
 								<dt>example</dt>
 								<dd><pre><code class="language-typescript"><span style="color: #795E26">escapeSqlTemplate</span><span style="color: #A31515">`SELECT * FROM table WHERE name = </span><span style="color: #0000FF">${</span><span style="color: #A31515">&#039;a&#039;</span><span style="color: #0000FF">}</span><span style="color: #A31515">`</span><span style="color: #000000">   </span><span style="color: #008000">// &#039;SELECT * FROM table WHERE name = \&#039;a\&#039;&#039;</span>
@@ -6790,7 +7136,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in string.ts:73</li>
+								<li>Defined in <a href="https://github.com/dev-itsheng/sheng-tool/blob/f845b3e/src/string.ts#L73">string.ts:73</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">

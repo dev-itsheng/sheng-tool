@@ -1,5 +1,5 @@
 /**
- * 去掉 HTML 标签
+ * 去掉 HTML 标签。
  *
  * @param str 要转换的字符串
  *
@@ -12,7 +12,7 @@
 export const removeHTMLTag = (str: string) => str.replace(/<[^>]+>/g, '');
 
 /**
- * 将阿拉伯数字转换成中文数字，可以转换成小写（默认）或大写（银行数字用的那种）
+ * 将阿拉伯数字转换成中文数字，可以转换成小写（默认）或大写（银行数字用的那种）。
  *
  * @param num 被转换的阿拉伯数字
  * @param big 是否采用大写数字，默认为 `false`
@@ -96,7 +96,7 @@ export const numberToChinese = (num: number, big = false, prefixZero = false): s
 };
 
 /**
- * 检测密码强度，规则为出现数字、大写字母、小写字母、下划线分别加一分，返回总分
+ * 检测密码强度，规则为出现数字、大写字母、小写字母、下划线分别加一分，返回总分。
  *
  * @param password 被检测的密码
  *

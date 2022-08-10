@@ -6,6 +6,11 @@ const getUA = () => navigator.userAgent.toLowerCase();
 export const isWeiXin = () => /micromessenger/.test(getUA());
 
 /**
+ * 是否是微信小程序环境（包括微信开发者工具），原理是检查 UA 中是否包含 `miniprogram`。
+ */
+export const isWeiXinMiniProgram = () => /miniprogram/.test(getUA());
+
+/**
  * 是否是移动端，原理是检查 UA 中是否包含 `android`、`webos`、`iphone`、`ipad`、`ipod` 或 `blackberry`。
  */
 export const isDeviceMobile = () => /android|webos|iphone|ipad|ipod|blackberry/.test(getUA());

@@ -73,7 +73,15 @@ export const byteLen = (str: string, charset: 'utf-8' | 'utf-16' = 'utf-8') => {
 export const truncate = (target: string, length = 30, truncation = '...') => target.length > length ? target.slice(0, length - truncation.length) + truncation : target;
 
 /**
- * 转义 SQL 字符串，在模板字符串前面使用
+ * 转义 SQL 字符串，在模板字符串前面使用。
+ *
+ * 具体转换规则为：
+ *
+ * * 如果是布尔类型的值，`true` 转换成 `'true'`，`false` 转换成 `'false'`。
+ * * 如果是数字类型的值，转换成对应的字符串。
+ * * 如果是日期类型的值，转换成 `YYYY-MM-DD HH:mm:ss` 对应的字符串。
+ * * 如果是字符串，会对引号、换行符、制表符等特殊字符进行转义。
+ * * 其他类型则会报错。
  *
  * @example
  *

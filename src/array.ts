@@ -1,9 +1,7 @@
-import { eq, uniq, isEqual } from 'lodash-es';
+import { eq, isEqual } from 'lodash-es';
 
 /**
  * 检查给定数组中某元素出现的次数，采用 `SameValueZero` 算法来比较（与 `===` 的区别为 `NaN` 与 `NaN` 相等）。
- *
- * @category 数组相关方法
  *
  * @param arr   被遍历的数组
  * @param value 目标元素
@@ -22,8 +20,6 @@ export const countOccurrences = <T>(arr: T[], value: T) => arr.filter(v => eq(v,
 /**
  * 返回数组中指定下标间隔的元素，首先选取第一个元素，然后跳过间隔数 -1 的元素选取下一个，以此类推。
  *
- * @category 数组相关
- *
  * @param arr 被遍历的数组
  * @param nth 指定的下标间隔
  *
@@ -36,30 +32,122 @@ export const countOccurrences = <T>(arr: T[], value: T) => arr.filter(v => eq(v,
 export const everyNth = <T>(arr: T[], nth: number) => arr.filter((v, i) => i % nth === 0);
 
 /**
- * 判断数组是否包含有相同元素，可通过参数来区分浅比较和深比较
+ * 判断数组是否包含有相同元素，可通过参数来区分浅比较（此时使用 SameValueZero 算法）和深比较。
  *
  * @param arr 要检查的数组
- * @param deep 是否深比较，默认为 `false`
+ * @param deep 是否深比较，默认为 `true`
  *
  * @example
  *
  * ```typescript
- * isUniqItem([1, 1, 2, 3])                    // false
- * isUniqItem([1, 2, 3])                       // true
- * isUniqItem([{ a: 1 }, { a: 1 }])            // true
- * isUniqItem([{ a: 1 }, { a: 1 }], true)      // false
+ * isUniqItem([1, 1, 2, 3])                     // false
+ * isUniqItem([1, 2, 3])                        // true
+ * isUniqItem([NaN, NaN])                       // false
+ * isUniqItem([{ a: 1 }, { a: 1 }])             // false
+ * isUniqItem([{ a: 1 }, { a: 1 }], false)      // true
  * ```
  */
-export const isUniqItem = (arr: any[], deep = false) => {
-    if (!deep) {
-        return uniq(arr).length === arr.length;
-    } else {
-        return arr.some((item, index) => {
-            for (let i = index + 1; i < arr.length; i++) {
-                if (isEqual(item, arr[i])) {
-                    return false;
-                }
-            }
-        });
+export const isUniqItem = (arr: any[], deep = true) => !(arr.some((item, index) => (arr.slice(index + 1).some(item2 => deep ? isEqual(item, item2) : eq(item, item2)))));
+
+/**
+ * 在一个对象数组中，根据指定的 `key` 和 `value`，查找对应的元素（使用深比较，返回第一个），并返回其 `anotherKey` 对应的值，如果没找到，则返回 `undefined`。
+ *
+ * @param arr 对象数组
+ * @param key 要查找的指定的 key
+ * @param value 要查找的指定的 value
+ * @param anotherKey 需要返回的值对应的 key
+ *
+ * @example
+ *
+ * ```typescript
+ * getValueByAnotherValue([{ a: 1, b: 2 }, { a: 2, b: 3 }], 'a', 2, 'b')   // 3
+ * getValueByAnotherValue([{ a: 1, b: 2 }, { a: 2, b: 3 }], 'a', 3, 'b')   // undefined
+ * ```
+ */
+export const getValueByAnotherValue = <T>(arr: T[], key: keyof T, value: any, anotherKey: keyof T) => arr.find(item => isEqual(item[key], value))?.[anotherKey];
+
+/**
+ * 在一个对象数组中，根据指定的 `value` 找对应的 `label`（如果有多个，返回第一个），如果没找到，返回 `undefined`。
+ *
+ * 通常配合组件库的选择器使用。
+ *
+ * @param arr 对象数组
+ * @param value 指定的 value
+ *
+ * @example
+ *
+ * ```typescript
+ * getLabelByValue([{ value: 1, label: '1' }, { value: 2, label: '2' }], 1)   // '1'
+ * getLabelByValue([{ value: 1, label: '1' }, { value: 2, label: '2' }], 3)   // undefined
+ * ```
+ */
+export const getLabelByValue = <T extends { label: any, value: any }>(arr: T[], value: any) => getValueByAnotherValue(arr, 'value', value, 'label');
+
+/**
+ * 在一个对象数组中，根据指定的 `label` 找对应的 `value`（如果有多个，返回第一个），如果没找到，返回 `undefined`。
+ *
+ * 通常配合组件库的选择器使用。
+ *
+ * @param arr 对象数组
+ * @param label 指定的 label
+ *
+ * @example
+ *
+ * ```typescript
+ * getValueByLabel([{ value: 1, label: '1' }, { value: 2, label: '2' }], '1')   // 1
+ * getValueByLabel([{ value: 1, label: '1' }, { value: 2, label: '2' }], '3')   // undefined
+ * ```
+ */
+export const getValueByLabel = <T extends { label: any, value: any }>(arr: T[], label: any) => getValueByAnotherValue(arr, 'label', label, 'value');
+
+/**
+ * 判断一个数组是否为另一个数组的子集，可通过参数来区分浅比较（SameValueZero）和深比较。
+ *
+ * @param source 需要判断的数组
+ * @param target 被判断的数组
+ * @param deep 是否深比较，默认为 `true`
+ *
+ * @example
+ *
+ * ```typescript
+ * isSubset([1, 2, 3], [1, 2, 3, 4])            // true
+ * isSubset([1, 2, 3], [1, 2, 4])               // false
+ * isSubset([1, 1, 2, 3], [1, 2, 3])            // false
+ * isSubset([1, 1, 2, 3], [1, 1, 2, 3, 4])      // true
+ * isSubset([{ x: 1 }], [{ x: 1 }, { x: 2 }])   // true
+ * isSubset([{ x: 1 }], [{ x: 1 }], false)      // false
+ * ```
+ */
+export const isSubset = <T>(source: T[], target: T[], deep = true) => {
+    const targetIsUsed = Array.from({ length: target.length }).fill(false);
+
+    for (const sourceItem of source) {
+        const targetIsUsedIndex = target.findIndex((targetItem, targetIndex) => !targetIsUsed[targetIndex] && (deep ? isEqual(sourceItem, targetItem) : eq(sourceItem, targetItem)));
+
+        if (targetIsUsedIndex === -1) {
+            return false;
+        }
+
+        targetIsUsed[targetIsUsedIndex] = true;
     }
+
+    return true;
 };
+
+/**
+ * 判断一个数组和另一个数组是否有交集，可通过参数来区分浅比较（SameValueZero）和深比较。
+ *
+ * @param source 被比较的数组
+ * @param target 被比较的另一个数组
+ * @param deep   是否深比较，默认为 `true`
+ *
+ * @example
+ *
+ * ```typescript
+ * isIntersect([1, 2, 3], [3, 4, 5])                                    // true
+ * isIntersect([1, 2, 3], [4, 5, 6])                                    // false
+ * isIntersect([{ x: 1 },  { x: 3 }], [{ x: 1 }, { x: 2 }])             // true
+ * isIntersect([{ x: 1 },  { x: 3 }], [{ x: 1 }, { x: 2 }], false)      // false
+ * ```
+ */
+const isIntersect = <T>(source: T[], target: T[], deep = true) => source.some(item => target.some(targetItem => deep ? isEqual(item, targetItem) : eq(item, targetItem)));

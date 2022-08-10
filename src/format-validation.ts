@@ -64,7 +64,7 @@ export const isEmail = (str: string) => /^[\w-]+@[\w-]+(?:\.[\w-]{2,3}){1,2}$/.t
  * isMobile('13000000000')  // true
  * ```
  */
-export const isMobile = (str: string) => /^(?:(?:\+|00)86)?1(?:3[\d]|4[5-7|9]|5[0-3|5-9]|6[5-7]|7[0-8]|8[\d]|9[189])\d{8}$/.test(str);
+export const isMobile = (str: string) => /^(?:(?:\+|00)86)?1(?:3\d|4[5-7|9]|5[0-3|5-9]|6[5-7]|7[0-8]|8[\d]|9[189])\d{8}$/.test(str);
 
 /**
  * 验证电话号码，规则为可选的区号（3 或 4 位）加横杠，后跟 7 或 8 位数字
@@ -89,7 +89,7 @@ export const isPhone = (str: string) => /^(?:\d{3}-)?\d{8}$|^(?:\d{4}-)?\d{7}$/.
 export const isURL = (str: string) => /^(?:https?:\/\/)?[\w-]+(?:\.[\w-]+)+(?:[\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?$/.test(str);
 
 /**
- * 验证迅雷地址
+ * 验证迅雷地址。
  *
  * @example
  *
@@ -100,7 +100,7 @@ export const isURL = (str: string) => /^(?:https?:\/\/)?[\w-]+(?:\.[\w-]+)+(?:[\
 export const isThunderURI = (str: string) => /^thunderx?:\/\/[a-zA-Z\d]+=$/.test(str);
 
 /**
- * 验证 ed2k 地址
+ * 验证 ed2k 地址。
  *
  * @example
  *
@@ -111,7 +111,7 @@ export const isThunderURI = (str: string) => /^thunderx?:\/\/[a-zA-Z\d]+=$/.test
 export const isEd2kURI = (str: string) => /^ed2k:\/\/\|file\|.+\|\/$/.test(str);
 
 /**
- * 验证磁力链接
+ * 验证磁力链接。
  *
  * @example
  *
@@ -122,7 +122,7 @@ export const isEd2kURI = (str: string) => /^ed2k:\/\/\|file\|.+\|\/$/.test(str);
 export const isMagnetURI = (str: string) => /^magnet:\?xt=urn:btih:[0-9a-fA-F]{40,}.*$/.test(str);
 
 /**
- * 验证 A 股代码，规则为 sh / sz / SH / SZ 后面跟六位数字
+ * 验证 A 股代码，规则为 sh / sz / SH / SZ 后面跟六位数字。
  *
  * @example
  *
@@ -136,7 +136,7 @@ export const isMagnetURI = (str: string) => /^magnet:\?xt=urn:btih:[0-9a-fA-F]{4
 export const isAShareCode = (str: string) => /^(?:s[hz]|S[HZ])\d{6}$/.test(str);
 
 /**
- * 验证 md5，规则为 32 位十六进制数字（字母需要全大写或全小写）
+ * 验证 md5，规则为 32 位十六进制数字（字母需要全大写或全小写）。
  *
  * @example
  *
@@ -147,7 +147,7 @@ export const isAShareCode = (str: string) => /^(?:s[hz]|S[HZ])\d{6}$/.test(str);
 export const isMD5 = (str: string) => /^[a-f\d]{32}|[A-F\d]{32}$/.test(str);
 
 /**
- * 验证语义化版本号，规则为三个以点号为分隔的数字，后面跟可选的横杠与 alpha / beta / rc 三个单词，再跟可选的点号和数字
+ * 验证语义化版本号，规则为三个以点号为分隔的数字，后面跟可选的横杠与 alpha / beta / rc 三个单词，再跟可选的点号和数字。
  *
  * @example
  *
@@ -161,7 +161,7 @@ export const isMD5 = (str: string) => /^[a-f\d]{32}|[A-F\d]{32}$/.test(str);
 export const isVersionCode = (str: string) => /^\d+(?:\.\d+){2}(?:-(?:alpha|beta|rc)(\.\d+)?)?$/.test(str);
 
 /**
- * 验证视频地址
+ * 验证视频地址。
  *
  * @example
  *
@@ -173,7 +173,7 @@ export const isVersionCode = (str: string) => /^\d+(?:\.\d+){2}(?:-(?:alpha|beta
 export const isVideoURL = (str: string) => /^https?:\/\/(?:.+\/)+.+\.(?:swf|avi|flv|mpg|rm|mov|wav|asf|3gp|mkv|rmvb|mp4)$/i.test(str);
 
 /**
- * 验证图片地址
+ * 验证图片地址。
  *
  * @example
  *
@@ -184,7 +184,7 @@ export const isVideoURL = (str: string) => /^https?:\/\/(?:.+\/)+.+\.(?:swf|avi|
 export const isImageURL = (str: string) => /^https?:\/\/(?:.+\/)+.+\.(?:gif|png|jpg|jpeg|webp|svg|psd|bmp|tif)$/.test(str);
 
 /**
- * 验证 Linux 文件地址
+ * 验证 Linux 文件地址。
  *
  * @example
  *
@@ -195,18 +195,18 @@ export const isImageURL = (str: string) => /^https?:\/\/(?:.+\/)+.+\.(?:gif|png|
 export const isLinuxFileAddress = (str: string) => /^\/(?:[^\/\s]+\/)*[^\/\s]+$/.test(str);
 
 /**
- * 验证 Linux 隐藏文件地址
+ * 验证 Linux 隐藏文件地址。
  *
  * @example
  *
  * ```typescript
- * isLinuxFileAddress('/home/vue-test/.gitignore')      // true
+ * isLinuxHiddenFileAddress('/home/vue-test/.gitignore')      // true
  * ```
  */
 export const isLinuxHiddenFileAddress = (str: string) => /^\/(?:[^\/\s]+\/)*\.[^\/\s]+/.test(str);
 
 /**
- * 验证 Windows 文件地址
+ * 验证 Windows 文件地址。
  *
  * @example
  *
@@ -217,7 +217,7 @@ export const isLinuxHiddenFileAddress = (str: string) => /^\/(?:[^\/\s]+\/)*\.[^
 export const isWindowsFileAddress = (str: string) => /^[a-zA-Z]:\\(?:[^\\\s]+\\)*[^\\\s]+$/.test(str);
 
 /**
- * 验证 Linux 文件夹地址
+ * 验证 Linux 文件夹地址。
  *
  * @example
  *
@@ -228,7 +228,7 @@ export const isWindowsFileAddress = (str: string) => /^[a-zA-Z]:\\(?:[^\\\s]+\\)
 export const isLinuxFolderAddress = (str: string) => /^\/(?:[^\/\s]+\/)*$/.test(str);
 
 /**
- * 验证 Windows 文件夹地址
+ * 验证 Windows 文件夹地址。
  *
  * @example
  *
@@ -239,7 +239,7 @@ export const isLinuxFolderAddress = (str: string) => /^\/(?:[^\/\s]+\/)*$/.test(
 export const isWindowsFolderAddress = (str: string) => /^[a-zA-Z]:\\(?:[^\\\s]+\\)*$/.test(str);
 
 /**
- * 验证 Linux 路径，包含文件地址和文件夹地址
+ * 验证 Linux 路径，包含文件地址和文件夹地址。
  *
  * @example
  *
@@ -251,7 +251,7 @@ export const isWindowsFolderAddress = (str: string) => /^[a-zA-Z]:\\(?:[^\\\s]+\
 export const isLinuxPath = (str: string) => /^\/(?:[^\/\s]+\/)*[^\/\s]*$/.test(str);
 
 /**
- * 验证 Windows 路径，包含文件地址和文件夹地址
+ * 验证 Windows 路径，包含文件地址和文件夹地址。
  *
  * @example
  *
@@ -263,7 +263,7 @@ export const isLinuxPath = (str: string) => /^\/(?:[^\/\s]+\/)*[^\/\s]*$/.test(s
  export const isWindowsPath = (str: string) => /^[a-zA-Z]:\\(?:[^\\\s]+\\)*[^\\\s]*$/.test(str);
 
 /**
- * 验证路径，包含 Linux 和 Windows 的文件地址和文件夹地址
+ * 验证路径，包含 Linux 和 Windows 的文件地址和文件夹地址。
  *
  * @example
  *
@@ -277,7 +277,7 @@ export const isLinuxPath = (str: string) => /^\/(?:[^\/\s]+\/)*[^\/\s]*$/.test(s
 export const isPath = (str: string) => /^\/(?:[^\/\s]+\/)*[^\/\s]*|[a-zA-Z]:\\(?:[^\\\s]+\\)*[^\\\s]*$/.test(str);
 
 /**
- * 验证 12 小时制时间格式（hh:mm:ss）
+ * 验证 12 小时制时间格式（hh:mm:ss）。
  *
  * @example
  *
@@ -290,7 +290,7 @@ export const isPath = (str: string) => /^\/(?:[^\/\s]+\/)*[^\/\s]*|[a-zA-Z]:\\(?
 export const is12Time = (str: string) => /^(?:1[0-2]|0?[1-9]):[0-5]\d:[0-5]\d$/.test(str);
 
 /**
- * 验证 24 小时制时间格式（HH:mm:ss）
+ * 验证 24 小时制时间格式（HH:mm:ss）。
  *
  * @example
  *
@@ -303,7 +303,7 @@ export const is12Time = (str: string) => /^(?:1[0-2]|0?[1-9]):[0-5]\d:[0-5]\d$/.
 export const is24Time = (str: string) => /^(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d$/.test(str);
 
 /**
- * 验证 base64 字符串
+ * 验证 base64 字符串。
  *
  * @example
  *
@@ -314,7 +314,7 @@ export const is24Time = (str: string) => /^(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d$/.t
 export const isBase64 = (str: string) => /^\s*data:(?:[a-z]+\/[a-z0-9-+.]+(?:;[a-z-]+=[a-z0-9-]+)?)?(?:;base64)?,([a-z0-9!$&',()*+;=\-._~:@\/?%\s]*?)\s*$/i.test(str);
 
 /**
- * 验证中文名
+ * 验证中文名。
  *
  * @example
  *
@@ -326,7 +326,7 @@ export const isBase64 = (str: string) => /^\s*data:(?:[a-z]+\/[a-z0-9-+.]+(?:;[a
 export const isChineseName = (str: string) => /^[\u4e00-\u9fa5·]{2,16}$/.test(str);
 
 /**
- * 验证英文名
+ * 验证英文名。
  *
  * @example
  *
@@ -338,7 +338,7 @@ export const isChineseName = (str: string) => /^[\u4e00-\u9fa5·]{2,16}$/.test(s
 export const isEnglishName = (str: string) => /^[a-zA-Z]+[a-zA-Z\s]{0,20}[a-zA-Z]+$/.test(str);
 
 /**
- * 验证银行卡号
+ * 验证银行卡号。
  *
  * @example
  *
@@ -368,7 +368,7 @@ export const isBankCardCode = (str: string) => {
 };
 
 /**
- * 验证新能源车车牌号
+ * 验证新能源车车牌号。
  *
  * @example
  *
@@ -379,7 +379,7 @@ export const isBankCardCode = (str: string) => {
 export const isNewEnergyCarNumber = (str: string) => /[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领 A-Z][A-HJ-NP-Z](?:[0-9]{5}[DF]|[DF][A-HJ-NP-Z0-9][0-9]{4})$/.test(str);
 
 /**
- * 验证非新能源车车牌号
+ * 验证非新能源车车牌号。
  *
  * @example
  *
@@ -390,7 +390,7 @@ export const isNewEnergyCarNumber = (str: string) => /[京津沪渝冀豫云辽�
 export const isNonNewEnergyCarNumber = (str: string) => /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领 A-Z][A-HJ-NP-Z][A-Z0-9]{4}[A-Z0-9挂学警港澳]$/.test(str);
 
 /**
- * 验证车牌号
+ * 验证车牌号。
  *
  * @example
  *
@@ -402,7 +402,7 @@ export const isNonNewEnergyCarNumber = (str: string) => /^[京津沪渝冀豫云
 export const isCarNumber = (str: string) => isNewEnergyCarNumber(str) || isNonNewEnergyCarNumber(str);
 
 /**
- * 验证护照号码
+ * 验证护照号码。
  *
  * @example
  *
@@ -413,7 +413,7 @@ export const isCarNumber = (str: string) => isNewEnergyCarNumber(str) || isNonNe
 export const isPassportNumber = (str: string) => /^[EeKkGgDdSsPpHh]\d{8}$|(^(?:[Ee][a-fA-F]|[DdSsPp][Ee]|[Kk][Jj]|[Mm][Aa]|1[45])\d{7}$)/.test(str);
 
 /**
- * 验证 IPv4 地址
+ * 验证 IPv4 地址。
  *
  * @example
  *
@@ -424,7 +424,7 @@ export const isPassportNumber = (str: string) => /^[EeKkGgDdSsPpHh]\d{8}$|(^(?:[
 export const isIPv4 = (str: string) => /^(?:(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)\.){3}(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)$/.test(str);
 
 /**
- * 验证 IPv6 地址
+ * 验证 IPv6 地址。
  *
  * @example
  *
@@ -435,7 +435,7 @@ export const isIPv4 = (str: string) => /^(?:(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\
 export const isIPv6 = (str: string) => /^(?:[0-9A-Fa-f]{1,4}:){7}[0-9A-Fa-f]{1,4}|(?:[0-9A-Fa-f]{1,4}:){6}:[0-9A-Fa-f]{1,4}|(?:[0-9A-Fa-f]{1,4}:){5}:(?:[0-9A-Fa-f]{1,4}:)?[0-9A-Fa-f]{1,4}|(?:[0-9A-Fa-f]{1,4}:){4}:(?:[0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4}|(?:[0-9A-Fa-f]{1,4}:){3}:(?:[0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4}|(?:[0-9A-Fa-f]{1,4}:){2}:(?:[0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4}|(?:(?:[0-9A-Fa-f]{1,4}:){6}(?:(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)\.){3}(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)|(?:[0-9A-Fa-f]{1,4}:){0,5}:(?:(?:25[0-5]|1\d{2}|2[0-4]\d|[1-9]\d|\d)\.){3}(?:25[0-5]|1\d{2}|2[0-4]\d|[1-9]\d|\d)|::(?:[0-9A-Fa-f]{1,4}:){0,5}(?:(?:25[0-5]|1\d{2}|2[0-4]\d|[1-9]\d|\d)\.){3}(?:25[0-5]|1\d{2}|2[0-4]\d|[1-9]\d|\d)|[0-9A-Fa-f]{1,4}::(?:[0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4}|::(?:[0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4}|(?:[0-9A-Fa-f]{1,4}:){1,7}:)$/.test(str);
 
 /**
- * 验证英文
+ * 验证英文。
  *
  * @example
  *
@@ -447,7 +447,7 @@ export const isIPv6 = (str: string) => /^(?:[0-9A-Fa-f]{1,4}:){7}[0-9A-Fa-f]{1,4
 export const isEnglish = (str: string) => /^[a-zA-Z]+$/.test(str);
 
 /**
- * 验证中文
+ * 验证中文。
  *
  * @example
  *
@@ -459,7 +459,7 @@ export const isEnglish = (str: string) => /^[a-zA-Z]+$/.test(str);
 export const isChinese = (str: string) => /^[\u4E00-\u9FA5]+$/.test(str);
 
 /**
- * 验证小写字母
+ * 验证小写字母。
  *
  * @example
  *
@@ -471,7 +471,7 @@ export const isChinese = (str: string) => /^[\u4E00-\u9FA5]+$/.test(str);
 export const isEnglishLower = (str: string) => /^[a-z]+$/.test(str);
 
 /**
- * 验证大写字母
+ * 验证大写字母。
  *
  * @example
  *
@@ -483,7 +483,7 @@ export const isEnglishLower = (str: string) => /^[a-z]+$/.test(str);
 export const isEnglishUpper = (str: string) => /^[A-Z]+$/.test(str);
 
 /**
- * 验证数字字符串，不包含前导零
+ * 验证数字字符串，不包含前导零。
  *
  * @example
  *
@@ -498,7 +498,7 @@ export const isEnglishUpper = (str: string) => /^[A-Z]+$/.test(str);
 export const isNumberString = (str: string) => /^-?[1-9]\d*|0(?:.\d+)?$/.test(str);
 
 /**
- * 验证整数字符串，
+ * 验证整数字符串。
  *
  * @example
  *
@@ -513,7 +513,7 @@ export const isNumberString = (str: string) => /^-?[1-9]\d*|0(?:.\d+)?$/.test(st
 export const isIntegerString = (str: string) => /^-?[1-9]\d*|0$/.test(str);
 
 /**
- * 验证日期字符串，允许中间用横杠或点连接
+ * 验证日期字符串，允许中间用横杠或点连接。
  *
  * @example
  *
@@ -526,7 +526,7 @@ export const isIntegerString = (str: string) => /^-?[1-9]\d*|0$/.test(str);
 export const isDateString = (str: string) => /^\d{4}([-.])\d{2}\1\d{2}$/.test(str);
 
 /**
- * 验证邮政编码
+ * 验证邮政编码。
  *
  * @example
  *
@@ -538,7 +538,7 @@ export const isDateString = (str: string) => /^\d{4}([-.])\d{2}\1\d{2}$/.test(st
 export const isPostal = (str: string) => /^(?:0[1-7]|1[0-356]|2[0-7]|3[0-6]|4[0-7]|5[1-7]|6[1-7]|7[0-5]|8[013-6])\d{4}$/.test(str);
 
 /**
- * 验证 QQ 号，规则为 5 ~ 10 位的整数，其中第一位不能为零
+ * 验证 QQ 号，规则为 5 ~ 10 位的整数，其中第一位不能为零。
  *
  * @example
  *
@@ -552,7 +552,7 @@ export const isPostal = (str: string) => /^(?:0[1-7]|1[0-356]|2[0-7]|3[0-6]|4[0-
 export const isQQ = (str: string) => /^[1-9]\d{4,9}$/.test(str);
 
 /**
- * 验证金额，规则为整数或两位小数
+ * 验证金额，规则为整数或两位小数。
  *
  * @example
  *
@@ -566,7 +566,7 @@ export const isQQ = (str: string) => /^[1-9]\d{4,9}$/.test(str);
 export const isMoney = (str: string) => /^\d+(?:\.\d{1,2})?$/.test(str);
 
 /**
- * 验证用户名，规则为大写字母、小写字母和数字，4 ~ 16 位
+ * 验证用户名，规则为大写字母、小写字母和数字，4 ~ 16 位。
  *
  * @example
  *
@@ -577,7 +577,7 @@ export const isMoney = (str: string) => /^\d+(?:\.\d{1,2})?$/.test(str);
 export const isUsername = (str: string) => /^[a-zA-Z0-9_-]{4,16}$/.test(str);
 
 /**
- * 验证微信号，规则为长度 6 ~ 20 位，以字母开头，后面可以跟字母，数字，横杠，下划线
+ * 验证微信号，规则为长度 6 ~ 20 位，以字母开头，后面可以跟字母，数字，横杠，下划线。
  *
  * @example
  *
@@ -588,7 +588,7 @@ export const isUsername = (str: string) => /^[a-zA-Z0-9_-]{4,16}$/.test(str);
 export const isWeixinCode = (str: string) => /^[a-zA-Z][-_a-zA-Z0-9]{5,19}$/.test(str);
 
 /**
- * 验证 Java 包名
+ * 验证 Java 包名。
  *
  * @example
  *
@@ -611,7 +611,7 @@ export const isJavaPackageName = (str: string) => /^(?:[a-zA-Z_][a-zA-Z0-9_]*)+(
 export const isMacAddress = (str: string) => /^(?:(?:[0-9a-f]{2}:){5}|(?:[0-9a-f]{2}-){5})[0-9a-f]{2}|(?:(?:[0-9A-F]{2}:){5}|(?:[0-9A-F]{2}-){5})[0-9A-F]{2}$/i.test(str);
 
 /**
- * 验证身份证号码
+ * 验证身份证号码。
  *
  * @example
  *
@@ -690,7 +690,7 @@ export const isIdentity = (str: string) => {
 }
 
 /**
- * 验证火车车次，规则为 `GCDZTSPKXLY` 或非零数字开头，后面跟 1 ~ 4 位数字
+ * 验证火车车次，规则为 `GCDZTSPKXLY` 或非零数字开头，后面跟 1 ~ 4 位数字。
  *
  * @example
  *
@@ -705,7 +705,7 @@ export const isIdentity = (str: string) => {
 export const isTrainNumber = (str: string) => /^[GCDZTSPKXLY1-9]\d{1,4}$/.test(str);
 
 /**
- * 验证手机机身码，规则为 15 ~ 17 位数字
+ * 验证手机机身码，规则为 15 ~ 17 位数字。
  *
  * @example
  *

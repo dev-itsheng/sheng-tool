@@ -12,7 +12,7 @@ export const getQueryString = (name: string) => {
 };
 
 /**
- * 将 URL 片段与当前域名拼合，组成完成 URL
+ * 将 URL 片段与当前域名拼合，组成完成 URL。
  *
  * @param url URL 片段，为域名后面的内容（不包含开头的斜杠）
  *
@@ -28,7 +28,7 @@ export const getFullUrl = (url: string) => `${location.origin}/${url}`;
 /**
  * 动态引入 JS CDN 文件，返回一个 Promise，当加载完毕时为 `resolve` 状态，加载失败后为 `reject`。
  *
- * 其中配置的 `defer` 和 `async` 对应 `<script>` 标签的两种属性
+ * 其中配置的 `defer` 和 `async` 对应 `<script>` 标签的两种属性。
  *
  * @param src JS 文件地址
  * @param config 配置
@@ -67,7 +67,7 @@ export const injectScriptBySrc = (src: string, config?: { defer?: boolean, async
 /**
  * 动态引入 JS 字符串，返回一个 Promise，当加载完毕时为 `resolve` 状态，加载失败后为 `reject`。
  *
- * 其中配置的 `defer` 和 `async` 对应 `<script>` 标签的两种属性
+ * 其中配置的 `defer` 和 `async` 对应 `<script>` 标签的两种属性。
  *
  * @param text JS 字符串
  * @param config 配置
@@ -105,22 +105,7 @@ export const injectScriptByText = (text: string, config?: { defer?: boolean, asy
 
 
 /**
- * 复制内容到剪贴板
- *
- * @param value 复制的值
- */
-export const copyTextToClipboard = (value: string) => {
-    const textarea = document.createElement('textarea');
-    textarea.style.background = 'transparent';
-    textarea.value = value;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand('copy');
-    document.removeChild(textarea);
-};
-
-/**
- * 将页面平滑滚动到顶部
+ * 将页面平滑滚动到顶部。
  *
  * @param millisecond 滚动持续的时长（单位为毫秒，默认为 1000）
  */
@@ -143,7 +128,7 @@ export const scrollToTop = (millisecond: number = 1000) => {
 
 
 /**
- * 一些业务场景，如弹框出现时，需要禁止页面滚动，这是兼容安卓和 iOS 禁止页面滚动的解决方案
+ * 一些业务场景，如弹框出现时，需要禁止页面滚动，这是兼容安卓和 iOS 禁止页面滚动的解决方案。
  *
  * 该函数返回另一个函数闭包，其存储了当前页面滚动位置，再次执行可以恢复页面状态。
  *
@@ -180,7 +165,7 @@ export const preventScroll = () => {
 };
 
 /**
- * 判断元素是否在浏览器可视范围内，分为部分可见（默认）和完全可见两种情况
+ * 判断元素是否在浏览器可视范围内，分为部分可见（默认）和完全可见两种情况。
  *
  * @param el 被观察的元素
  * @param partiallyVisible 该元素是否「完全可见」才符合「可视范围」的标准，默认为 `false`
@@ -194,9 +179,9 @@ export const elementIsVisibleInViewport = (el: Element, partiallyVisible = false
 };
 
 /**
- * Promise 形式的等待，等待指定毫秒数后 resolve 空值
+ * Promise 形式的等待，等待指定毫秒数后 resolve 空值。
  *
- * @param millseconds 毫秒数
+ * @param milliseconds 毫秒数
  *
  * @example
  *
@@ -208,10 +193,10 @@ export const elementIsVisibleInViewport = (el: Element, partiallyVisible = false
  * })();
  * ```
  */
-export const wait = (millseconds: number) => new Promise<void>(resolve => setTimeout(() => resolve(), millseconds));
+export const wait = (milliseconds: number) => new Promise<void>(resolve => setTimeout(() => resolve(), milliseconds));
 
 /**
- * Promise 形式的等待，与 `wait` 不一样的是，它等待的单位是秒
+ * Promise 形式的等待，与 `wait` 不一样的是，它等待的单位是秒。
  *
  * @param seconds 秒数
  *
@@ -228,7 +213,7 @@ export const wait = (millseconds: number) => new Promise<void>(resolve => setTim
 export const waitForSeconds = (seconds: number) => wait(seconds * 1000);
 
 /**
- * 复制文本，兼容 IE9（需要 Promise Polyfill）
+ * 复制文本，兼容 IE9（需要 Promise Polyfill）。
  *
  * @param text 被复制的文本
  *
@@ -236,12 +221,12 @@ export const waitForSeconds = (seconds: number) => wait(seconds * 1000);
  *
  * ```typescript
  * (async () => {
- *     const text = await copy('hello world');
+ *     const text = await copyText('hello world');
  *     // 此时按 Ctrl / Command + V 即可粘贴「hello world 文本」
  * }
  * ```
  */
-export const copy = (text: string) => {
+export const copyText = (text: string) => {
     if (navigator.clipboard) {
         return navigator.clipboard.writeText(text);
     }
@@ -259,6 +244,30 @@ export const copy = (text: string) => {
         document.body.removeChild(textarea);
         resolve();
     })
+};
+
+/**
+ * 复制 HTML，一般用于富文本编辑器的场合。
+ *
+ * @param html 被复制的 HTML 字符串
+ *
+ * @example
+ *
+ * ```typescript
+ * (async () => {
+ *     const text = await copyHTML('<ul><li>hello</li><li>world</li></ul>');
+ *     // 此时按 Ctrl / Command + V 到富文本编辑器中即可粘贴「hello」和「world」的有序列表
+ * }
+ * ```
+ */
+export const copyHTML = (html: string) => {
+    if (navigator.clipboard) {
+        // 由于 typedoc 库限制 TypeScript 版本（~4.2），TypeScript 无法识别新版 BOM API navigator.clipboard.write 及 ClipboardItem 的类型，所以直接忽略掉这一行的类型检查
+        // @ts-ignore
+        return navigator.clipboard.write([new ClipboardItem({ 'text/html': new Blob([html], { type: 'text/html' }) })]);
+    }
+
+    return Promise.reject(new Error('clipboard API is not supported'));
 };
 
 /**
