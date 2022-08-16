@@ -1,4 +1,4 @@
-import { eq, isEqual } from 'lodash-es';
+import { eq, isEqual, omit } from 'lodash-es';
 
 /**
  * 检查给定数组中某元素出现的次数，采用 `SameValueZero` 算法来比较（与 `===` 的区别为 `NaN` 与 `NaN` 相等）。
@@ -122,7 +122,9 @@ export const isSubset = <T>(source: T[], target: T[], deep = true) => {
     const targetIsUsed = Array.from({ length: target.length }).fill(false);
 
     for (const sourceItem of source) {
-        const targetIsUsedIndex = target.findIndex((targetItem, targetIndex) => !targetIsUsed[targetIndex] && (deep ? isEqual(sourceItem, targetItem) : eq(sourceItem, targetItem)));
+        const targetIsUsedIndex = target.findIndex(
+            (targetItem, targetIndex) => !targetIsUsed[targetIndex] && (deep ? isEqual(sourceItem, targetItem) : eq(sourceItem, targetItem))
+        );
 
         if (targetIsUsedIndex === -1) {
             return false;
@@ -151,3 +153,34 @@ export const isSubset = <T>(source: T[], target: T[], deep = true) => {
  * ```
  */
 const isIntersect = <T>(source: T[], target: T[], deep = true) => source.some(item => target.some(targetItem => deep ? isEqual(item, targetItem) : eq(item, targetItem)));
+
+/**
+ * 将对象数组每一项中的的某一个 key 拿出来，将其他 key 构成 value 并组成新的对象。
+ *
+ * @param arr 对象数组
+ * @param key 指定的 key
+ *
+ * @example
+ *
+ * ```typescript
+ * convertArrayToObject([{ x: 'a', y: 1 }, { x: 'b', y: 2 }], 'x')   // { a: { y: 1 }, b: { y: 2 } }
+ * ```
+ */
+const convertArrayToObject = <T extends object>(arr: T[], key: keyof T) => Object.fromEntries(arr.map(item => [item[key], omit(item, [key])]));
+
+/**
+ * 与 `convertArrayToObject` 相反。
+ *
+ * 遍历对象，将它的每一个 key 以另一个 key 作为 key，并合并其他 value 组成对象数组。
+ *
+ * @param obj 对象
+ * @param key 指定的 key
+ *
+ * @example
+ *
+ * ```typescript
+ * convertObjectToArray({ a: { y: 1 }, b: { y: 2 } }, 'x')   // [{ x: 'a', y: 1 }, { x: 'b', y: 2 }]
+ * ```
+ */
+const convertObjectToArray = (obj: Record<string, object>, key: string) => Object.entries(obj).map(([k, v]) => ({ [key]: k, ...v }));
+

@@ -1,4 +1,4 @@
-import { sum, initial, last, map } from 'lodash-es';
+import { sum, initial, last, flow, map } from 'lodash-es';
 
 /**
  * 生成一个数字验证器，以验证特殊（不超过特定值及小数点位数）的数字格式。
@@ -361,9 +361,13 @@ export const isBankCardCode = (str: string) => {
     // 6. 与最后一位作比对
     const numArr = str.split('').map(Number);
 
-    //const verifyCode = 10 - (numArr |> initial |> (arr => map(arr, (num, index) => index % 2 ? num : num * 2)) |> sum) % 10;
-    const verifyCode = 10 - (sum((arr => map(arr, (num, index) => index % 2 ? num : num * 2))(initial(numArr)))) % 10;
-
+    const verifyCode = flow([
+        initial,
+        (arr: number[]) => map(arr, (num, index) => index % 2 ? num : num * 2),
+        sum,
+        (num: number) => num % 10,
+        (num: number) => 10 - num,
+    ])(numArr);
     return verifyCode === last(numArr);
 };
 

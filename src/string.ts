@@ -1,4 +1,4 @@
-import { isBoolean, isDate, isNumber, isString } from 'lodash-es';
+import { isBoolean, isDate, isNumber, isString, words, upperFirst, flow, toLower } from 'lodash-es';
 import dayjs from 'dayjs/esm';
 
 /**
@@ -52,7 +52,7 @@ export const byteLen = (str: string, charset: 'utf-8' | 'utf-16' = 'utf-8') => {
     }
 
     return total;
-}
+};
 
 /**
  * 用于对字符串进行截断处理。当超过限定长度（默认是 30），默认添加 3 个点号。
@@ -131,4 +131,24 @@ export const escapeSqlTemplate = (strings: string, ...values: any[]) => {
     result += strings[strings.length - 1];
 
     return result;
-}
+};
+
+/**
+ * 将字符串转换成大驼峰格式（Pascal Case）。
+ *
+ * @params str 被转换的字符串
+ *
+ * @example
+ *
+ * ```typescript
+ * pascalCase('hello-world')        // 'HelloWorld'
+ * pascalCase('helloWorld')         // 'HelloWorld'
+ * pascalCase('hello_world')        // 'HelloWorld'
+ * pascalCase('hello world')        // 'HelloWorld'
+ * pascalCase('helloWorld world')   // 'HelloWorldWorld'
+ * pascalCase('--hello-world--')    // 'HelloWorld'
+ * pascalCase('__hello_world__')    // 'HelloWorld'
+ * pascalCase('__HELLO_WORLD__')    // 'HelloWorld'
+ * ```
+ */
+export const pascalCase = (str: string) => words(str.replace(/['\u2019]/g, '')).map(flow([toLower, upperFirst])).join('');
